@@ -64,13 +64,25 @@ class _ClubsUIState extends State<ClubsUI> {
       body: Container(
           color: Color(0xFFF0F0F0),
           child: Column(children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                'Clubs & Chapter\'s',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                  borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(18),
+                bottomRight: Radius.circular(18),
+              )),
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Center(
+                  child: Text(
+                    'Clubs & Chapter\'s',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -106,8 +118,9 @@ class _ClubsUIState extends State<ClubsUI> {
                       child: Padding(
                         padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
                         child: Container(
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(18),
-                          boxShadow: [new BoxShadow(color: Colors.white)]),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(
                             leading: CircleAvatar(
                                 backgroundImage: NetworkImage(

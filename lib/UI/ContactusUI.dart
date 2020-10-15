@@ -43,7 +43,7 @@ class ContactUsUI extends StatelessWidget {
         title: Text(
           'For your days at BITS',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         actions: <Widget>[

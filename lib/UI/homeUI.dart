@@ -131,10 +131,12 @@ class _HomeUIState extends State<HomeUI> {
                       return new GestureDetector(
                         onTap: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Announcement(
-                                      content, featureimg, date, title)));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Announcement(
+                                  content, featureimg, date, title),
+                            ),
+                          );
                         },
                         child: Padding(
                           padding:
