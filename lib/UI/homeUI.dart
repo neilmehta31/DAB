@@ -1,5 +1,4 @@
-// import 'dart:html';
-
+import 'package:daysatbits/Widgets/shimmerUI.dart';
 import 'package:flutter/material.dart';
 // import 'package:daysatbits/Widgets/widgets.dart';
 import 'package:daysatbits/InnerPages/announcement.dart';
@@ -15,7 +14,7 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  final String apiUrl = "https://daysatbits.com/wp-json/wp/v2/";
+  final String apiUrl = "https://vitdayz.com/wp-json/wp/v2/";
   final scrollController = new ScrollController();
   List posts;
   List pos = [];
@@ -26,7 +25,7 @@ class _HomeUIState extends State<HomeUI> {
     page = page + 1;
     String p = page.toString();
     var res = await http.get(
-        Uri.encodeFull(apiUrl + "posts/?_embed&categories=11&page=" + p),
+        Uri.encodeFull(apiUrl + "posts/?_embed&categories=14&page=" + p),
         headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     response = res.statusCode;
@@ -64,7 +63,11 @@ class _HomeUIState extends State<HomeUI> {
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(color: Colors.green),
+            decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18))),
             width: double.infinity,
             child: Column(
               children: [
@@ -85,7 +88,7 @@ class _HomeUIState extends State<HomeUI> {
             child: Builder(builder: (context) {
               if (posts == null) {
                 return Center(
-                  child: CircularProgressIndicator(),
+                  child: shimmerUI(),
                 );
               } else {
                 return RefreshIndicator(
@@ -96,8 +99,11 @@ class _HomeUIState extends State<HomeUI> {
                     itemBuilder: (BuildContext context, int index) {
                       if (index == posts.length - 1) {
                         return Padding(
-                            padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                            child: Center(child: CupertinoActivityIndicator()));
+                          padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
                       }
 
                       DateTime date = DateTime.parse(posts[index]['date']
@@ -136,10 +142,7 @@ class _HomeUIState extends State<HomeUI> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(18),
-                              boxShadow: [
-                                new BoxShadow(
-                                    color: Colors.white)
-                              ],
+                              boxShadow: [new BoxShadow(color: Colors.white)],
                             ),
                             child: Padding(
                               padding: EdgeInsets.only(top: 10.0, bottom: 5.0),

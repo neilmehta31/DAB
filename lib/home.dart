@@ -60,159 +60,157 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: new Scaffold(
-        floatingActionButton: FloatingActionButton(
-          disabledElevation: 2,
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ContactUsUI()));
-          },
-          child: Icon(Icons.mail, size: 38,),
-        ),
-        drawer: Drawer(
-            elevation: 16.0,
-            child: ListView(
-              padding: EdgeInsets.only(top: 0),
-              children: <Widget>[
-                DrawerHeader(
-                  child: Text('Drawer Header'),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                ),
-                ListTile(
-                  onTap: () {
-                    return Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ClubsUI()));
-                  },
-                  leading: Icon(
-                    Icons.phone,
-                    color: Colors.blue,
-                  ),
-                  title: Text("Clubs"),
-                ),
-                Divider(
-                  thickness: 2,
-                ),
-                ListTile(
-                  onTap: () {
-                    return Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ContactUsUI()));
-                  },
-                  leading: Icon(
-                    Icons.phone,
-                    color: Colors.blue,
-                  ),
-                  title: Text("Reach us"),
-                ),
-                Divider(
-                  thickness: 2,
-                ),
-              ],
-            )),
-        appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          title: Text(
-            'For your days at BITS',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.info,
-                  color: Colors.black,
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutUsUI()));
-                })
-          ],
-          backgroundColor: Colors.blue,
-          elevation: 0.0,
-          centerTitle: true,
-        ),
-        body: _body(),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   currentIndex: _currentIndex,
-        //   items: [
-        //     // BottomNavigationBarItem(
-        //     //   icon: Icon(
-        //     //     Icons.apps,
-        //     //     color: Colors.black,
-        //     //   ),
-        //     //   title: Text(
-        //     //     'Tools',
-        //     //     style: TextStyle(
-        //     //       color: Colors.black,
-        //     //     ),
-        //     //   ),
-        //     //   backgroundColor: Colors.red,
-        //     // ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.palette,
-        //         color: Colors.black,
-        //       ),
-        //       title: Text(
-        //         'Clubs',
-        //         style: TextStyle(
-        //           color: Colors.black,
-        //         ),
-        //       ),
-        //       backgroundColor: Colors.red,
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.home,
-        //         color: Colors.black,
-        //       ),
-        //       title: Text(
-        //         'Home',
-        //         style: TextStyle(
-        //           color: Colors.black,
-        //         ),
-        //       ),
-        //       backgroundColor: Colors.red,
-        //     ),
-        //     // BottomNavigationBarItem(
-        //     //   icon: Icon(
-        //     //     Icons.person,
-        //     //     color: Colors.black,
-        //     //   ),
-        //     //   title: Text(
-        //     //     'Faculty',
-        //     //     style: TextStyle(
-        //     //       color: Colors.black,
-        //     //     ),
-        //     //   ),
-        //     //   backgroundColor: Colors.red,
-        //     // ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.phone,
-        //         color: Colors.black,
-        //       ),
-        //       title: Text(
-        //         'Reach Us',
-        //         style: TextStyle(
-        //           color: Colors.black,
-        //         ),
-        //       ),
-        //       backgroundColor: Colors.red,
-        //     ),
-        //   ],
-        //   onTap: (index) {
-        //     setState(() {
-        //       _currentIndex = index;
-        //     });
-        //   },
-        // ),
+    return new Scaffold(
+      floatingActionButton: FloatingActionButton(
+        disabledElevation: 2,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ContactUsUI()));
+        },
+        child: Icon(Icons.mail, size: 38,),
       ),
+      drawer: Drawer(
+          elevation: 16.0,
+          child: ListView(
+            padding: EdgeInsets.only(top: 0),
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  return Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ClubsUI()));
+                },
+                leading: Icon(
+                  Icons.phone,
+                  color: Colors.blue,
+                ),
+                title: Text("Clubs"),
+              ),
+              Divider(
+                thickness: 2,
+              ),
+              ListTile(
+                onTap: () {
+                  return Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ContactUsUI()));
+                },
+                leading: Icon(
+                  Icons.phone,
+                  color: Colors.blue,
+                ),
+                title: Text("Reach us"),
+              ),
+              Divider(
+                thickness: 2,
+              ),
+            ],
+          )),
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        title: Text(
+          'For your days at BITS',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.info,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AboutUsUI()));
+              })
+        ],
+        backgroundColor: Colors.blue,
+        elevation: 0.0,
+        centerTitle: true,
+      ),
+      body: _body(),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   items: [
+      //     // BottomNavigationBarItem(
+      //     //   icon: Icon(
+      //     //     Icons.apps,
+      //     //     color: Colors.black,
+      //     //   ),
+      //     //   title: Text(
+      //     //     'Tools',
+      //     //     style: TextStyle(
+      //     //       color: Colors.black,
+      //     //     ),
+      //     //   ),
+      //     //   backgroundColor: Colors.red,
+      //     // ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.palette,
+      //         color: Colors.black,
+      //       ),
+      //       title: Text(
+      //         'Clubs',
+      //         style: TextStyle(
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       backgroundColor: Colors.red,
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.home,
+      //         color: Colors.black,
+      //       ),
+      //       title: Text(
+      //         'Home',
+      //         style: TextStyle(
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       backgroundColor: Colors.red,
+      //     ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: Icon(
+      //     //     Icons.person,
+      //     //     color: Colors.black,
+      //     //   ),
+      //     //   title: Text(
+      //     //     'Faculty',
+      //     //     style: TextStyle(
+      //     //       color: Colors.black,
+      //     //     ),
+      //     //   ),
+      //     //   backgroundColor: Colors.red,
+      //     // ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.phone,
+      //         color: Colors.black,
+      //       ),
+      //       title: Text(
+      //         'Reach Us',
+      //         style: TextStyle(
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       backgroundColor: Colors.red,
+      //     ),
+      //   ],
+      //   onTap: (index) {
+      //     setState(() {
+      //       _currentIndex = index;
+      //     });
+      //   },
+      // ),
     );
   }
 }

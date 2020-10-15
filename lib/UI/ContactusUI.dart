@@ -62,7 +62,7 @@ class ContactUsUI extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        color: Color(0xFFF0F0F0),
+        color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

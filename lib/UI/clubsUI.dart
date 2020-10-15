@@ -1,3 +1,4 @@
+import 'package:daysatbits/Widgets/shimmerUI.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/InnerPages/clubs.dart';
 import 'dart:async';
@@ -43,7 +44,7 @@ class _ClubsUIState extends State<ClubsUI> {
         title: Text(
           'For your days at BITS',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         actions: <Widget>[
@@ -77,7 +78,7 @@ class _ClubsUIState extends State<ClubsUI> {
             Expanded(child: Builder(builder: (context) {
               if (clubs == null) {
                 return Center(
-                  child: CircularProgressIndicator(),
+                  child: shimmerUI(),
                 );
               } else {
                 return ListView.builder(
