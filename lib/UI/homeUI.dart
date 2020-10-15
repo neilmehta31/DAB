@@ -1,5 +1,7 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
-import 'package:daysatbits/Widgets/widgets.dart';
+// import 'package:daysatbits/Widgets/widgets.dart';
 import 'package:daysatbits/InnerPages/announcement.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -13,7 +15,7 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  final String apiUrl = "https://vitdayz.com/wp-json/wp/v2/";
+  final String apiUrl = "https://daysatbits.com/wp-json/wp/v2/";
   final scrollController = new ScrollController();
   List posts;
   List pos = [];
@@ -24,7 +26,7 @@ class _HomeUIState extends State<HomeUI> {
     page = page + 1;
     String p = page.toString();
     var res = await http.get(
-        Uri.encodeFull(apiUrl + "posts/?_embed&categories=14&page=" + p),
+        Uri.encodeFull(apiUrl + "posts/?_embed&categories=11&page=" + p),
         headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     response = res.statusCode;
@@ -58,10 +60,26 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Color(0xFFF0F0F0),
       child: Column(
         children: [
-          WelcomeMessage(),
+          Container(
+            decoration: BoxDecoration(color: Colors.green),
+            width: double.infinity,
+            child: Column(
+              children: [
+                Text.rich(
+                  TextSpan(
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                      text: "Announcements"),
+                )
+              ],
+            ),
+          ),
+          // WelcomeMessage(),
           SizedBox(height: 5.0),
           Expanded(
             child: Builder(builder: (context) {
@@ -113,15 +131,24 @@ class _HomeUIState extends State<HomeUI> {
                                       content, featureimg, date, title)));
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                          child: Card(
+                          padding:
+                              EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              boxShadow: [
+                                new BoxShadow(
+                                    color: Colors.white)
+                              ],
+                            ),
                             child: Padding(
-                              padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                              padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
                               child: new ListTile(
                                 leading: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                  featureimg,
-                                )),
+                                  backgroundImage: NetworkImage(
+                                    featureimg,
+                                  ),
+                                ),
                                 title: new Text(title),
                                 subtitle: Text(timeAgo(date)),
                               ),

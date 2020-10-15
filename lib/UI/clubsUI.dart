@@ -57,12 +57,11 @@ class _ClubsUIState extends State<ClubsUI> {
                     MaterialPageRoute(builder: (context) => AboutUsUI()));
               })
         ],
-        backgroundColor: Colors.blue,
         elevation: 0.0,
         centerTitle: true,
       ),
       body: Container(
-          color: Colors.white,
+          color: Color(0xFFF0F0F0),
           child: Column(children: [
             Padding(
               padding: EdgeInsets.all(10.0),
@@ -103,9 +102,11 @@ class _ClubsUIState extends State<ClubsUI> {
                                     clubs[index]["linkedin"],
                                     clubs[index]["twitter"])));
                       },
-                      child: Card(
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                        child: Container(
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(18),
+                          boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(
                             leading: CircleAvatar(
                                 backgroundImage: NetworkImage(

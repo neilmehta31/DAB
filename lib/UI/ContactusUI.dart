@@ -62,7 +62,7 @@ class ContactUsUI extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        color: Colors.white,
+        color: Color(0xFFF0F0F0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -131,13 +131,13 @@ class ContactUsUI extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Image.asset(
-                'images/baby.png',
-                height: 100,
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.only(bottom: 8.0),
+            //   child: Image.asset(
+            //     'images/baby.png',
+            //     height: 100,
+            //   ),
+            // ),
           ],
         ),
       ),

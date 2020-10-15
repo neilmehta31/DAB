@@ -62,6 +62,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: new Scaffold(
+        floatingActionButton: FloatingActionButton(
+          disabledElevation: 2,
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ContactUsUI()));
+          },
+          child: Icon(Icons.mail, size: 38,),
+        ),
         drawer: Drawer(
             elevation: 16.0,
             child: ListView(

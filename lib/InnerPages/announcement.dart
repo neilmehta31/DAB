@@ -33,7 +33,10 @@ class _AnnouncementState extends State<Announcement> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0.0,
-          title: Text('Announcement', style: TextStyle(color: Colors.black)),
+          title: Text(
+            'Announcement',
+            style: TextStyle(color: Colors.black),
+          ),
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
