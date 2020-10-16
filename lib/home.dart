@@ -20,26 +20,26 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   int _currentIndex = 1;
 
-  Widget _body() {
-    return Stack(
-      children: List<Widget>.generate(3, (int index) {
-        return IgnorePointer(
-          ignoring: index != _currentIndex,
-          child: Opacity(
-            opacity: _currentIndex == index ? 1.0 : 0.0,
-            child: Navigator(
-              onGenerateRoute: (RouteSettings settings) {
-                return new MaterialPageRoute(
-                  builder: (_) => _page(index),
-                  settings: settings,
-                );
-              },
-            ),
-          ),
-        );
-      }),
-    );
-  }
+                              // Widget _body() {
+                              //   return Stack(
+                              //     children: List<Widget>.generate(3, (int index) {
+                              //       return IgnorePointer(
+                              //         ignoring: index != _currentIndex,
+                              //         child: Opacity(
+                              //           opacity: _currentIndex == index ? 1.0 : 0.0,
+                              //           child: Navigator(
+                              //             onGenerateRoute: (RouteSettings settings) {
+                              //               return new MaterialPageRoute(
+                              //                 builder: (_) => _page(index),
+                              //                 settings: settings,
+                              //               );
+                              //             },
+                              //           ),
+                              //         ),
+                              //       );
+                              //     }),
+                              //   );
+                              // }
 
   Widget _page(int index) {
     switch (index) {
@@ -64,10 +64,13 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         disabledElevation: 2,
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ContactUsUI()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ContactUsUI()));
         },
-        child: Icon(Icons.mail, size: 38,),
+        child: Icon(
+          Icons.mail,
+          size: 38,
+        ),
       ),
       drawer: Drawer(
           elevation: 16.0,
@@ -96,8 +99,10 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 onTap: () {
-                  return Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ContactUsUI()));
+                  return Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactUsUI()),
+                  );
                 },
                 leading: Icon(
                   Icons.phone,
@@ -124,7 +129,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -135,7 +140,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: _body(),
+      body: HomeUI(),
       // bottomNavigationBar: BottomNavigationBar(
       //   currentIndex: _currentIndex,
       //   items: [
