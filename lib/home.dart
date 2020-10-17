@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/AboutusUI.dart';
 // import 'package:daysatbits/UI/ToolsUI.dart';
@@ -20,43 +22,43 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   int _currentIndex = 1;
 
-                              // Widget _body() {
-                              //   return Stack(
-                              //     children: List<Widget>.generate(3, (int index) {
-                              //       return IgnorePointer(
-                              //         ignoring: index != _currentIndex,
-                              //         child: Opacity(
-                              //           opacity: _currentIndex == index ? 1.0 : 0.0,
-                              //           child: Navigator(
-                              //             onGenerateRoute: (RouteSettings settings) {
-                              //               return new MaterialPageRoute(
-                              //                 builder: (_) => _page(index),
-                              //                 settings: settings,
-                              //               );
-                              //             },
-                              //           ),
-                              //         ),
-                              //       );
-                              //     }),
-                              //   );
-                              // }
+  // Widget _body() {
+  //   return Stack(
+  //     children: List<Widget>.generate(3, (int index) {
+  //       return IgnorePointer(
+  //         ignoring: index != _currentIndex,
+  //         child: Opacity(
+  //           opacity: _currentIndex == index ? 1.0 : 0.0,
+  //           child: Navigator(
+  //             onGenerateRoute: (RouteSettings settings) {
+  //               return new MaterialPageRoute(
+  //                 builder: (_) => _page(index),
+  //                 settings: settings,
+  //               );
+  //             },
+  //           ),
+  //         ),
+  //       );
+  //     }),
+  //   );
+  // }
 
-  Widget _page(int index) {
-    switch (index) {
-      // case 0:
-      //   return Tools();
-      case 0:
-        return ClubsUI();
-      case 1:
-        return HomeUI();
-      // case 2:
-      //   return FacultyUI();
-      case 2:
-        return ContactUsUI();
-    }
+  // Widget _page(int index) {
+  //   switch (index) {
+  //     // case 0:
+  //     //   return Tools();
+  //     case 0:
+  //       return ClubsUI();
+  //     case 1:
+  //       return HomeUI();
+  //     // case 2:
+  //     //   return FacultyUI();
+  //     case 2:
+  //       return ContactUsUI();
+  //   }
 
-    throw "Invalid index $index";
-  }
+  //   throw "Invalid index $index";
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +80,16 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
-                child: Text('Drawer Header'),
+                child: Text.rich(
+                  TextSpan(
+                      text: "BITS Pilani\nHyderabad Campus",
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ),
                 decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/drawer_header.jpeg'),
+                    fit: BoxFit.cover,
+                  ),
                   color: Colors.blue,
                 ),
               ),
@@ -108,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                   Icons.phone,
                   color: Colors.blue,
                 ),
-                title: Text("Reach us"),
+                title: Text("Contact us"),
               ),
               Divider(
                 thickness: 2,
@@ -122,7 +132,7 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           'For your days at BITS',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.white,      
           ),
         ),
         actions: <Widget>[

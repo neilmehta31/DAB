@@ -30,6 +30,7 @@ class _HomeUIState extends State<HomeUI> {
     var resBody = json.decode(res.body);
     response = res.statusCode;
     pos.addAll(resBody);
+    // print(pos[0]["title"]["rendered"]);
     setState(() {
       posts = pos;
     });
@@ -124,8 +125,10 @@ class _HomeUIState extends State<HomeUI> {
                         am
                       ]);
                       var content = posts[index]['content']['rendered'];
+
                       var featureimg = posts[index]["_embedded"]
                           ["wp:featuredmedia"][0]["source_url"];
+
                       var title = posts[index]["title"]["rendered"]
                           .replaceAll(new RegExp(r'(&)(.*)(;)'), '\'');
                       return new GestureDetector(
@@ -143,6 +146,8 @@ class _HomeUIState extends State<HomeUI> {
                               EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
                           child: Container(
                             decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.black, width: 0.2),
                               borderRadius: BorderRadius.circular(18),
                               boxShadow: [new BoxShadow(color: Colors.white)],
                             ),
@@ -152,7 +157,7 @@ class _HomeUIState extends State<HomeUI> {
                                 leading: CircleAvatar(
                                   backgroundImage: NetworkImage(
                                     featureimg,
-                                  ),
+                                  )
                                 ),
                                 title: new Text(title),
                                 subtitle: Text(timeAgo(date)),
