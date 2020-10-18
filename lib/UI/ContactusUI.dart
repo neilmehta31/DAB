@@ -126,7 +126,7 @@ class ContactUsUI extends StatelessWidget {
                   ),
                   RaisedButton(
                     child: Text('Send Email'),
-                    color: Colors.yellow,
+                    color: Colors.deepOrange[300],
                     onPressed: _sendEmail,
                   ),
                 ],

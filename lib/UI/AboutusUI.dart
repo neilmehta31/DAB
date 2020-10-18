@@ -17,7 +17,7 @@ class AboutUsUI extends StatelessWidget {
             body: SafeArea(
               child: Container(
                 color: Colors.white,
-                padding: EdgeInsets.only(top: 25.0, left: 8.0, right: 8.0),
+                padding: EdgeInsets.only(top: 0.0, left: 8.0, right: 8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -25,9 +25,9 @@ class AboutUsUI extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Image.asset(
-                          "images/logo_daysatbits.jpeg",
-                          height: 120,
-                          width: 120,
+                          "images/bits.jpeg",
+                          height: 200,
+                          width: 450,
                         ),
                         SizedBox(height: 8.0),
                         Text('Copyright © DaysAtBITS',
@@ -57,7 +57,7 @@ class AboutUsUI extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(bottom: 10.0),
                       child: Text(
-                        '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll information provided is for general use only and is subject to change.',
+                        '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll information provided is for general use only and is subject to change.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12.0,

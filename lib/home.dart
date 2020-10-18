@@ -96,6 +96,8 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                 ),
                 title: Text("Clubs and Departments"),
+                //selected: true,
+                enabled: true,
                 focusColor: Colors.deepOrange,
                 hoverColor: Colors.blue[100],
               ),
@@ -112,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                 ),
                 title: Text("Contact us"),
+                //selected: true,
                 hoverColor: Colors.blue[100],
               ),
               Divider(
