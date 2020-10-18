@@ -44,6 +44,7 @@ class ContactUsUI extends StatelessWidget {
           'For your days at BITS',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.w300, // light
           ),
         ),
         actions: <Widget>[
@@ -69,7 +70,7 @@ class ContactUsUI extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 15.0),
               child: Text(
-                'Reach Us',
+                'Contact Us',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

@@ -6,7 +6,7 @@ import 'package:daysatbits/UI/AboutusUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
 
-import 'UI/ContactusUI.dart';
+import 'UI/ContactusUI.dart' show ContactUsUI;
 import 'UI/clubsUI.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,10 +64,13 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         disabledElevation: 2,
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ContactUsUI()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ContactUsUI()));
         },
-        child: Icon(Icons.mail, size: 38,),
+        child: Icon(
+          Icons.mail,
+          size: 38,
+        ),
       ),
       drawer: Drawer(
           elevation: 16.0,
@@ -75,9 +78,12 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
-                child: Text('Drawer Header'),
+                child: Text(''),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  image: DecorationImage(
+                    image: AssetImage('images/head.jpeg'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               ListTile(
@@ -86,10 +92,12 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ClubsUI()));
                 },
                 leading: Icon(
-                  Icons.phone,
+                  Icons.nature_people,
                   color: Colors.blue,
                 ),
-                title: Text("Clubs"),
+                title: Text("Clubs and Departments"),
+                focusColor: Colors.deepOrange,
+                hoverColor: Colors.blue[100],
               ),
               Divider(
                 thickness: 2,
@@ -103,10 +111,11 @@ class _HomePageState extends State<HomePage> {
                   Icons.phone,
                   color: Colors.blue,
                 ),
-                title: Text("Reach us"),
+                title: Text("Contact us"),
+                hoverColor: Colors.blue[100],
               ),
               Divider(
-                thickness: 2,
+                thickness: 4,
               ),
             ],
           )),
@@ -115,9 +124,10 @@ class _HomePageState extends State<HomePage> {
           color: Colors.black,
         ),
         title: Text(
-          'For your days at BITS',
+          'For your Days at BITS',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.w300, // light
           ),
         ),
         actions: <Widget>[

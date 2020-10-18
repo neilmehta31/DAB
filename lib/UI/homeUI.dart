@@ -59,7 +59,7 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF0F0F0),
+      color: Color(0xF0F0F0),
       child: Column(
         children: [
           Container(
@@ -76,6 +76,7 @@ class _HomeUIState extends State<HomeUI> {
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.white,
+                        fontWeight: FontWeight.w600, // light
                       ),
                       text: "Announcements"),
                 )
