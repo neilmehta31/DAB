@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context,

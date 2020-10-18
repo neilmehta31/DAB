@@ -8,7 +8,7 @@ class AboutUsUI extends StatelessWidget {
             appBar: AppBar(
               title: Text('About us'),
               iconTheme: IconThemeData(
-                color: Colors.black38,
+                color: Colors.white,
               ),
               backgroundColor: Colors.lightBlue[400],
               elevation: 0.0,
