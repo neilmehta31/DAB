@@ -26,13 +26,11 @@ class _AnnouncementState extends State<Announcement> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green,
         elevation: 0.0,
         title: Text(
           'Announcement',
@@ -61,8 +59,9 @@ class _AnnouncementState extends State<Announcement> {
                     decoration: new BoxDecoration(
                       shape: BoxShape.circle,
                       image: new DecorationImage(
-                          fit: BoxFit.fill,
-                          image: new NetworkImage(featureimg)),
+                        fit: BoxFit.fill,
+                        image: NetworkImage(featureimg),
+                      ),
                     ),
                   ),
                 ),
@@ -73,10 +72,19 @@ class _AnnouncementState extends State<Announcement> {
                       fontWeight: FontWeight.bold,
                     )),
                 SizedBox(height: 3.0),
-                Text(
-                  timeAgo(date),
-                  style: TextStyle(
-                    color: Colors.grey,
+                Container(
+                  width: double.infinity,
+                  // color: Colors.red,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        timeAgo(date),
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Center(

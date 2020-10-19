@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/AboutusUI.dart';
 // import 'package:daysatbits/UI/ToolsUI.dart';
@@ -20,47 +22,48 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   int _currentIndex = 1;
 
-  Widget _body() {
-    return Stack(
-      children: List<Widget>.generate(3, (int index) {
-        return IgnorePointer(
-          ignoring: index != _currentIndex,
-          child: Opacity(
-            opacity: _currentIndex == index ? 1.0 : 0.0,
-            child: Navigator(
-              onGenerateRoute: (RouteSettings settings) {
-                return new MaterialPageRoute(
-                  builder: (_) => _page(index),
-                  settings: settings,
-                );
-              },
-            ),
-          ),
-        );
-      }),
-    );
-  }
+  // Widget _body() {
+  //   return Stack(
+  //     children: List<Widget>.generate(3, (int index) {
+  //       return IgnorePointer(
+  //         ignoring: index != _currentIndex,
+  //         child: Opacity(
+  //           opacity: _currentIndex == index ? 1.0 : 0.0,
+  //           child: Navigator(
+  //             onGenerateRoute: (RouteSettings settings) {
+  //               return new MaterialPageRoute(
+  //                 builder: (_) => _page(index),
+  //                 settings: settings,
+  //               );
+  //             },
+  //           ),
+  //         ),
+  //       );
+  //     }),
+  //   );
+  // }
 
-  Widget _page(int index) {
-    switch (index) {
-      // case 0:
-      //   return Tools();
-      case 0:
-        return ClubsUI();
-      case 1:
-        return HomeUI();
-      // case 2:
-      //   return FacultyUI();
-      case 2:
-        return ContactUsUI();
-    }
+  // Widget _page(int index) {
+  //   switch (index) {
+  //     // case 0:
+  //     //   return Tools();
+  //     case 0:
+  //       return ClubsUI();
+  //     case 1:
+  //       return HomeUI();
+  //     // case 2:
+  //     //   return FacultyUI();
+  //     case 2:
+  //       return ContactUsUI();
+  //   }
 
-    throw "Invalid index $index";
-  }
+  //   throw "Invalid index $index";
+  // }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+
       floatingActionButton: FloatingActionButton(
         disabledElevation: 2,
         onPressed: () {
@@ -72,18 +75,21 @@ class _HomePageState extends State<HomePage> {
           size: 38,
         ),
       ),
+
       drawer: Drawer(
           elevation: 16.0,
           child: ListView(
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
-                child: Text(''),
+
+                child: 
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('images/head.jpeg'),
                     fit: BoxFit.fill,
                   ),
+
                 ),
               ),
               ListTile(
@@ -92,6 +98,7 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ClubsUI()));
                 },
                 leading: Icon(
+
                   Icons.nature_people,
                   color: Colors.blue,
                 ),
@@ -100,28 +107,52 @@ class _HomePageState extends State<HomePage> {
                 //enabled: true,
                 focusColor: Colors.deepOrange,
                 hoverColor: Colors.blue[100],
+
               ),
               Divider(
                 thickness: 2,
               ),
               ListTile(
                 onTap: () {
-                  return Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ContactUsUI()));
+                  return Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactUsUI()),
+                  );
                 },
-                leading: Icon(
-                  Icons.phone,
-                  color: Colors.blue,
+                trailing: Icon(
+                  Icons.mail,
+                  color: Colors.blue[600],
+                  size: 40,
                 ),
                 title: Text("Contact us"),
+
                 //selected: true,
                 hoverColor: Colors.blue[100],
               ),
               Divider(
                 thickness: 4,
+
               ),
-            ],
-          )),
+    Divider(
+    thickness: 2,
+    ),
+//            floatingActionButton: FloatingActionButton(
+//    disabledElevation: 2,
+//    onPressed: () {
+//    Navigator.push(
+//    context, MaterialPageRoute(builder: (context) => ContactUsUI()));
+//    },
+//    child: Icon(
+//    Icons.mail,
+//    size: 38,
+//    ),
+
+
+
+
+
+//
+          ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.black,
@@ -129,8 +160,10 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           'For your Days at BITS',
           style: TextStyle(
+
             color: Colors.white,
             fontWeight: FontWeight.w300, // light
+
           ),
         ),
         actions: <Widget>[
@@ -145,10 +178,10 @@ class _HomePageState extends State<HomePage> {
               })
         ],
         backgroundColor: Colors.blue,
-        elevation: 0.0,
+        elevation: 50.0,
         centerTitle: true,
       ),
-      body: _body(),
+      body: HomeUI(),
       // bottomNavigationBar: BottomNavigationBar(
       //   currentIndex: _currentIndex,
       //   items: [

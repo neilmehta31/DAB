@@ -120,6 +120,7 @@ class _ClubsUIState extends State<ClubsUI> {
                         padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
                         child: Container(
                           decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 0.2),
                               borderRadius: BorderRadius.circular(18),
                               boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(

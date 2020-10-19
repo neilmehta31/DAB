@@ -30,6 +30,7 @@ class _HomeUIState extends State<HomeUI> {
     var resBody = json.decode(res.body);
     response = res.statusCode;
     pos.addAll(resBody);
+    // print(pos[0]["title"]["rendered"]);
     setState(() {
       posts = pos;
     });
@@ -59,12 +60,14 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       color: Color(0xF0F0F0),
+
       child: Column(
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.white70,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
@@ -75,8 +78,10 @@ class _HomeUIState extends State<HomeUI> {
                   TextSpan(
                       style: TextStyle(
                         fontSize: 30,
+
                         color: Colors.white,
                         fontWeight: FontWeight.w600, // light
+
                       ),
                       text: "Announcements"),
                 )
@@ -84,7 +89,7 @@ class _HomeUIState extends State<HomeUI> {
             ),
           ),
           // WelcomeMessage(),
-          SizedBox(height: 5.0),
+          SizedBox(height: 0.0),
           Expanded(
             child: Builder(builder: (context) {
               if (posts == null) {
@@ -125,8 +130,10 @@ class _HomeUIState extends State<HomeUI> {
                         am
                       ]);
                       var content = posts[index]['content']['rendered'];
+
                       var featureimg = posts[index]["_embedded"]
                           ["wp:featuredmedia"][0]["source_url"];
+
                       var title = posts[index]["title"]["rendered"]
                           .replaceAll(new RegExp(r'(&)(.*)(;)'), '\'');
                       return new GestureDetector(
@@ -144,6 +151,8 @@ class _HomeUIState extends State<HomeUI> {
                               EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
                           child: Container(
                             decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.black, width: 0.2),
                               borderRadius: BorderRadius.circular(18),
                               boxShadow: [new BoxShadow(color: Colors.white)],
                             ),
@@ -153,7 +162,7 @@ class _HomeUIState extends State<HomeUI> {
                                 leading: CircleAvatar(
                                   backgroundImage: NetworkImage(
                                     featureimg,
-                                  ),
+                                  )
                                 ),
                                 title: new Text(title),
                                 subtitle: Text(timeAgo(date)),

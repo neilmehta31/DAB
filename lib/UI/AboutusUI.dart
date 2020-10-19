@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AboutUsUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
         child: new Scaffold(
             appBar: AppBar(
@@ -62,11 +63,14 @@ class AboutUsUI extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.0,
                         ),
+
                       ),
                     ),
                   ],
                 ),
+
               ),
             )));
+
   }
 }
