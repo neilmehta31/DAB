@@ -67,8 +67,8 @@ class _HomeUIState extends State<HomeUI> {
             decoration: BoxDecoration(
                 color: Colors.white70,
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0),
-                    bottomRight: Radius.circular(0))),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18))),
             width: double.infinity,
             child: Column(
               children: [
