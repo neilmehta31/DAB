@@ -18,7 +18,7 @@ class _shimmerUIState extends State<shimmerUI> {
           child: ListView.builder(
             itemBuilder: (BuildContext context, int index) {
               return Padding(
-                padding: EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
+                padding: EdgeInsets.only(left: 5.0, right: 5.0, top: 10,bottom: 3),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),

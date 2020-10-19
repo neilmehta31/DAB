@@ -125,10 +125,9 @@ class _ClubsUIState extends State<ClubsUI> {
                               borderRadius: BorderRadius.circular(18),
                               boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(
-                            leading: CircleAvatar(
-                                backgroundImage: NetworkImage(
-                              clubs[index]["logo"],
-                            )),
+                            leading: ClipOval(
+                              child: FadeInImage(placeholder: AssetImage('images/logo.png'), image: NetworkImage(clubs[index]["logo"])),
+                            ),
                             title: new Text(clubs[index]["name"]),
                             subtitle: new Text(clubs[index]["type"]),
                           ),

@@ -111,6 +111,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(color: Colors.white, fontSize:20)),
 
                           alignment: Alignment.bottomLeft,
+
               ),
 
     // alignment: Alignment.bottomLeft,
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
               hoverColor: Colors.blue[100],
             ),
             Divider(
-              thickness: 2,
+              thickness: 1,
             ),
             ListTile(
               onTap: () {
@@ -176,7 +177,7 @@ class _HomePageState extends State<HomePage> {
               hoverColor: Colors.blue[100],
             ),
             Divider(
-              thickness: 2,
+              thickness: 1,
             ),
 //            floatingActionButton: FloatingActionButton(
 //    disabledElevation: 2,
