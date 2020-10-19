@@ -38,19 +38,20 @@ class ContactUsUI extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Text(
           'For your days at BITS',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.w300, // light
           ),
         ),
         actions: <Widget>[
           IconButton(
               icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -69,7 +70,7 @@ class ContactUsUI extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 15.0),
               child: Text(
-                'Reach Us',
+                'Contact Us',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -125,7 +126,7 @@ class ContactUsUI extends StatelessWidget {
                   ),
                   RaisedButton(
                     child: Text('Send Email'),
-                    color: Colors.yellow,
+                    color: Colors.deepOrange[300],
                     onPressed: _sendEmail,
                   ),
                 ],

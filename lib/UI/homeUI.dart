@@ -60,7 +60,7 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF0F0F0),
+      color: Color(0xFFFFF3),
       child: Column(
         children: [
           Container(
@@ -70,21 +70,26 @@ class _HomeUIState extends State<HomeUI> {
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
             width: double.infinity,
-            child: Column(
-              children: [
-                Text.rich(
-                  TextSpan(
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black54,
-                      ),
-                      text: "Announcements"),
-                )
-              ],
+
+            child: Container(
+              color: Color(0xFFFFF3),
+              child: Column(
+                children: [
+                  Text.rich(
+                    TextSpan(
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                        ),
+                        text: "Announcements"),
+                  ),
+                  Padding(padding: EdgeInsets.only(bottom: 7))
+                ],
+              ),
+
             ),
           ),
-          // WelcomeMessage(),
-          SizedBox(height: 5.0),
+          SizedBox(height: 0.0),
           Expanded(
             child: Builder(builder: (context) {
               if (posts == null) {
@@ -155,10 +160,9 @@ class _HomeUIState extends State<HomeUI> {
                               padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
                               child: new ListTile(
                                 leading: CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                    featureimg,
-                                  )
-                                ),
+                                    backgroundImage: NetworkImage(
+                                  featureimg,
+                                )),
                                 title: new Text(title),
                                 subtitle: Text(timeAgo(date)),
                               ),

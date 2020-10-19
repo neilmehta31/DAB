@@ -9,6 +9,7 @@ import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
 import 'package:daysatbits/UI/Map.dart';
 import 'UI/ContactusUI.dart';
+
 import 'UI/clubsUI.dart';
 
 class HomePage extends StatefulWidget {
@@ -74,23 +75,15 @@ class _HomePageState extends State<HomePage> {
           size: 38,
         ),
       ),
+
       drawer: Drawer(
           elevation: 16.0,
-          child: ListView(
-            padding: EdgeInsets.only(top: 0),
-            children: <Widget>[
-              DrawerHeader(
-                child: Text.rich(
-                  TextSpan(
-                      text: "BITS Pilani\nHyderabad Campus",
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                ),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('images/drawer_header.jpeg'),
-                    fit: BoxFit.cover,
-                  ),
-                  color: Colors.blue,
+          child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/head.jpeg'),
+                  fit: BoxFit.fill,
                 ),
               ),
               ListTile(
@@ -134,15 +127,33 @@ class _HomePageState extends State<HomePage> {
                 ),
                 title: Text("Contact us"),
               ),
-              Divider(
-                thickness: 2,
+              title: Text("Clubs and Departments"),
+              //selected: true,
+              //enabled: true,
+              focusColor: Colors.deepOrange,
+              hoverColor: Colors.blue[100],
+            ),
+            Divider(
+              thickness: 2,
+            ),
+            ListTile(
+              onTap: () {
+                return Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactUsUI()),
+                );
+              },
+              trailing: Icon(
+                Icons.mail,
+                color: Colors.blue[600],
+                size: 40,
               ),
 
 
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Text('Updates rolling soon.........'),
+                      child: Text('Updates rolling soon...'),
                     ),
                   ),
 //                  alignment: Alignment.bottomCenter,
@@ -150,15 +161,35 @@ class _HomePageState extends State<HomePage> {
 //                    alignment: Alignment.bottomCenter,
 //                    child: Text('Bottom'),
 //                  ),
+              title: Text("Contact us"),
+
+              //selected: true,
+              hoverColor: Colors.blue[100],
+            ),
+            Divider(
+              thickness: 1,
+            ),
+//            floatingActionButton: FloatingActionButton(
+//    disabledElevation: 2,
+//    onPressed: () {
+//    Navigator.push(
+//    context, MaterialPageRoute(builder: (context) => ContactUsUI()));
+//    },
+//    child: Icon(
+//    Icons.mail,
+//    size: 38,
+//    ),
+
           ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Text(
-          'For your days at BITS',
+          'For your Days at BITS',
           style: TextStyle(
-            color: Colors.white,      
+            color: Colors.white,
+            fontWeight: FontWeight.w300, // light
           ),
         ),
         actions: <Widget>[
