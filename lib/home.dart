@@ -102,7 +102,9 @@ class _HomePageState extends State<HomePage> {
               focusColor: Colors.deepOrange,
               hoverColor: Colors.blue[100],
             ),
-            Divider(thickness: 1,),
+            Divider(
+              thickness: 1,
+            ),
             ListTile(
               onTap: () {
                 return Navigator.push(
@@ -120,7 +122,9 @@ class _HomePageState extends State<HomePage> {
               //selected: true,
               hoverColor: Colors.blue[100],
             ),
-            Divider(thickness: 1,),
+            Divider(
+              thickness: 1,
+            ),
 //            floatingActionButton: FloatingActionButton(
 //    disabledElevation: 2,
 //    onPressed: () {

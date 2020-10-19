@@ -9,7 +9,7 @@ class AboutUsUI extends StatelessWidget {
           iconTheme: IconThemeData(
             color: Colors.white,
           ),
-          backgroundColor: Colors.lightGreen[800],
+          backgroundColor: Colors.green,
           elevation: 0.0,
           centerTitle: true,
         ),
@@ -43,7 +43,7 @@ class AboutUsUI extends StatelessWidget {
                   ),
                   SizedBox(height: 5.0),
                   Text(
-                    'Your number one source for all BITS Hyderabad Anoucements. We’re dedicated to providing you, up to Date updates about everything that’s happening in our campus. The app is under development,\n\n New updates coming soon!',
+                    'Your number one source for all BITS Hyderabad Anoucements. We’re dedicated to providing you, up to Date updates about everything that’s happening in our campus. The app is under development.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
@@ -52,13 +52,29 @@ class AboutUsUI extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  'All information provided is for general use only and is subject to change.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 12.0,
+              Expanded(
+                child: Align(
+                  child: Text.rich(
+                    TextSpan(
+                      text: "New updates coming soon!",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 22.0),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 30.0),
+                    child: Text(
+                      'All information provided is for general use only and is subject to change.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12.0,
+                      ),
+                    ),
                   ),
                 ),
               ),

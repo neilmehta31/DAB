@@ -128,10 +128,10 @@ class _HomeUIState extends State<HomeUI> {
                         ' ',
                         am
                       ]);
-                      var content = posts[index]['content']['rendered'];
+                      var content = posts[index]["content"]["rendered"];
 
-                      var featureimg =
-                          'https://mlrtpohjtknp.i.optimole.com/OgPpXnI.Ytaf~f674/w:auto/h:auto/q:85/https://hellodesign.co/wp-content/uploads/2020/06/hello-website-feature-image-copy@1x.png';
+                      var featureimg = posts[index]["_embedded"]
+                          ["wp:featuredmedia"][0]["source_url"];
 
                       var title = posts[index]["title"]["rendered"]
                           .replaceAll(new RegExp(r'(&)(.*)(;)'), '\'');
@@ -159,7 +159,7 @@ class _HomeUIState extends State<HomeUI> {
                               padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
                               child: new ListTile(
                                 leading: CircleAvatar(
-                                  backgroundColor: Colors.grey[400],
+                                  backgroundColor: Color(0xFFDFE1EF),
                                   child: ClipOval(
                                     child: FadeInImage(
                                         fadeInDuration:
