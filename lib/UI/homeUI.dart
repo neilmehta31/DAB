@@ -72,7 +72,7 @@ class _HomeUIState extends State<HomeUI> {
             width: double.infinity,
             child: Container(
               color: Color(0xFFFFF3),
-              child: Column(   
+              child: Column(
                 children: [
                   Text.rich(
                     TextSpan(
@@ -81,7 +81,8 @@ class _HomeUIState extends State<HomeUI> {
                           color: Colors.white,
                         ),
                         text: "Announcements"),
-                  )
+                  ),
+                  Padding(padding: EdgeInsets.only(bottom: 7))
                 ],
               ),
             ),

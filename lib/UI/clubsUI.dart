@@ -39,7 +39,7 @@ class _ClubsUIState extends State<ClubsUI> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Text(
           'For your days at BITS',
@@ -52,7 +52,7 @@ class _ClubsUIState extends State<ClubsUI> {
           IconButton(
               icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -120,7 +120,8 @@ class _ClubsUIState extends State<ClubsUI> {
                         padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 0.2),
+                              border:
+                                  Border.all(color: Colors.black, width: 0.2),
                               borderRadius: BorderRadius.circular(18),
                               boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(

@@ -97,8 +97,9 @@ class _ClubState extends State<Club> {
                         height: 125.0,
                         decoration: new BoxDecoration(
                           image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(logo)),
+                            fit: BoxFit.fill,
+                            image: new NetworkImage(logo),
+                          ),
                         ),
                       ),
                     ),
