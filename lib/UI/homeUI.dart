@@ -14,7 +14,7 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  final String apiUrl = "https://vitdayz.com/wp-json/wp/v2/";
+  final String apiUrl = "https://daysatbits.com/wp-json/wp/v2/";
   final scrollController = new ScrollController();
   List posts;
   List pos = [];
@@ -25,7 +25,7 @@ class _HomeUIState extends State<HomeUI> {
     page = page + 1;
     String p = page.toString();
     var res = await http.get(
-        Uri.encodeFull(apiUrl + "posts/?_embed&categories=14&page=" + p),
+        Uri.encodeFull(apiUrl + "posts/?_embed&categories=11&page=" + p),
         headers: {"Accept": "application/json"});
     var resBody = json.decode(res.body);
     response = res.statusCode;
@@ -102,7 +102,7 @@ class _HomeUIState extends State<HomeUI> {
                     controller: scrollController,
                     itemCount: posts == null ? 0 : posts.length,
                     itemBuilder: (BuildContext context, int index) {
-                      if (index == posts.length - 1) {
+                      if (index == posts.length) {
                         return Padding(
                           padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
                           child: Center(
@@ -130,8 +130,8 @@ class _HomeUIState extends State<HomeUI> {
                       ]);
                       var content = posts[index]['content']['rendered'];
 
-                      var featureimg = posts[index]["_embedded"]
-                          ["wp:featuredmedia"][0]["source_url"];
+                      var featureimg =
+                          'https://mlrtpohjtknp.i.optimole.com/OgPpXnI.Ytaf~f674/w:auto/h:auto/q:85/https://hellodesign.co/wp-content/uploads/2020/06/hello-website-feature-image-copy@1x.png';
 
                       var title = posts[index]["title"]["rendered"]
                           .replaceAll(new RegExp(r'(&)(.*)(;)'), '\'');
@@ -146,8 +146,8 @@ class _HomeUIState extends State<HomeUI> {
                           );
                         },
                         child: Padding(
-                          padding:
-                              EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
+                          padding: EdgeInsets.only(
+                              left: 5.0, right: 5.0, top: 10, bottom: 3),
                           child: Container(
                             decoration: BoxDecoration(
                               border:
@@ -159,9 +159,16 @@ class _HomeUIState extends State<HomeUI> {
                               padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
                               child: new ListTile(
                                 leading: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                  featureimg,
-                                )),
+                                  backgroundColor: Colors.grey[400],
+                                  child: ClipOval(
+                                    child: FadeInImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 500),
+                                        placeholder:
+                                            AssetImage('images/logo.png'),
+                                        image: NetworkImage(featureimg)),
+                                  ),
+                                ),
                                 title: new Text(title),
                                 subtitle: Text(timeAgo(date)),
                               ),
@@ -174,7 +181,7 @@ class _HomeUIState extends State<HomeUI> {
                 );
               }
             }),
-          )
+          ),
         ],
       ),
     );

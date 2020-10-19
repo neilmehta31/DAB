@@ -79,6 +79,7 @@ class _HomePageState extends State<HomePage> {
           elevation: 16.0,
           child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
             DrawerHeader(
+              child: null,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/head.jpeg'),
@@ -101,9 +102,7 @@ class _HomePageState extends State<HomePage> {
               focusColor: Colors.deepOrange,
               hoverColor: Colors.blue[100],
             ),
-            Divider(
-              thickness: 2,
-            ),
+            Divider(thickness: 1,),
             ListTile(
               onTap: () {
                 return Navigator.push(
@@ -111,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute(builder: (context) => ContactUsUI()),
                 );
               },
-              trailing: Icon(
+              leading: Icon(
                 Icons.mail,
                 color: Colors.blue[600],
                 size: 40,
@@ -121,9 +120,7 @@ class _HomePageState extends State<HomePage> {
               //selected: true,
               hoverColor: Colors.blue[100],
             ),
-            Divider(
-              thickness: 2,
-            ),
+            Divider(thickness: 1,),
 //            floatingActionButton: FloatingActionButton(
 //    disabledElevation: 2,
 //    onPressed: () {
