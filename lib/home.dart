@@ -63,7 +63,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
       floatingActionButton: FloatingActionButton(
         disabledElevation: 2,
         onPressed: () {
@@ -78,62 +77,53 @@ class _HomePageState extends State<HomePage> {
 
       drawer: Drawer(
           elevation: 16.0,
-          child: ListView(
-            padding: EdgeInsets.only(top: 0),
-            children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('images/head.jpeg'),
-                    fit: BoxFit.fill,
-                  ),
-
+          child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/head.jpeg'),
+                  fit: BoxFit.fill,
                 ),
               ),
-              ListTile(
-                onTap: () {
-                  return Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ClubsUI()));
-                },
-                leading: Icon(
-
-                  Icons.nature_people,
-                  color: Colors.blue,
-                ),
-                title: Text("Clubs and Departments"),
-                //selected: true,
-                //enabled: true,
-                focusColor: Colors.deepOrange,
-                hoverColor: Colors.blue[100],
-
+            ),
+            ListTile(
+              onTap: () {
+                return Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ClubsUI()));
+              },
+              leading: Icon(
+                Icons.nature_people,
+                color: Colors.blue,
               ),
-              Divider(
-                thickness: 2,
+              title: Text("Clubs and Departments"),
+              //selected: true,
+              //enabled: true,
+              focusColor: Colors.deepOrange,
+              hoverColor: Colors.blue[100],
+            ),
+            Divider(
+              thickness: 2,
+            ),
+            ListTile(
+              onTap: () {
+                return Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactUsUI()),
+                );
+              },
+              trailing: Icon(
+                Icons.mail,
+                color: Colors.blue[600],
+                size: 40,
               ),
-              ListTile(
-                onTap: () {
-                  return Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContactUsUI()),
-                  );
-                },
-                trailing: Icon(
-                  Icons.mail,
-                  color: Colors.blue[600],
-                  size: 40,
-                ),
-                title: Text("Contact us"),
+              title: Text("Contact us"),
 
-                //selected: true,
-                hoverColor: Colors.blue[100],
-              ),
-              Divider(
-                thickness: 4,
-
-              ),
-    Divider(
-    thickness: 2,
-    ),
+              //selected: true,
+              hoverColor: Colors.blue[100],
+            ),
+            Divider(
+              thickness: 2,
+            ),
 //            floatingActionButton: FloatingActionButton(
 //    disabledElevation: 2,
 //    onPressed: () {
@@ -145,23 +135,17 @@ class _HomePageState extends State<HomePage> {
 //    size: 38,
 //    ),
 
-
-
-
-
 //
           ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Text(
           'For your Days at BITS',
           style: TextStyle(
-
             color: Colors.white,
             fontWeight: FontWeight.w300, // light
-
           ),
         ),
         actions: <Widget>[

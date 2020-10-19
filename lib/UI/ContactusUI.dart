@@ -38,7 +38,7 @@ class ContactUsUI extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         title: Text(
           'For your days at BITS',
@@ -51,7 +51,7 @@ class ContactUsUI extends StatelessWidget {
           IconButton(
               icon: Icon(
                 Icons.info,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context,
