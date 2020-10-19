@@ -57,7 +57,7 @@ class AboutUsUI extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(bottom: 10.0),
                       child: Text(
-                        '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll information provided is for general use only and is subject to change.',
+                        'All information provided is for general use only and is subject to change.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 12.0,
