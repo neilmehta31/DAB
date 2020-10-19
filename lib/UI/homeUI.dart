@@ -65,11 +65,12 @@ class _HomeUIState extends State<HomeUI> {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.white30,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
             width: double.infinity,
+
             child: Container(
               color: Color(0xFFFFF3),
               child: Column(
@@ -85,9 +86,9 @@ class _HomeUIState extends State<HomeUI> {
                   Padding(padding: EdgeInsets.only(bottom: 7))
                 ],
               ),
+
             ),
           ),
-          // WelcomeMessage(),
           SizedBox(height: 0.0),
           Expanded(
             child: Builder(builder: (context) {

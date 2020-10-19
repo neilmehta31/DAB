@@ -40,10 +40,20 @@ class AboutUsUI extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 22.0,
                     ),
+
+                  ],
+                ),
+                // Image.asset("images/snow.png",height: 150,),
+                Padding(
+                  padding: EdgeInsets.only(top:10, bottom: 25.0),
+                  child: Text(
+                    'All information provided is for general use only and is subject to change.',
+
                   ),
                   SizedBox(height: 5.0),
                   Text(
                     'Your number one source for all BITS Hyderabad Anoucements. We’re dedicated to providing you, up to Date updates about everything that’s happening in our campus. The app is under development,\n\n New updates coming soon!',
+
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
