@@ -7,9 +7,8 @@ import 'package:daysatbits/UI/AboutusUI.dart';
 // import 'package:daysatbits/UI/FacultyUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
-import 'package:daysatbits/UI/Map.dart';
-import 'UI/ContactusUI.dart';
 
+import 'UI/ContactusUI.dart' show ContactUsUI;
 import 'UI/clubsUI.dart';
 
 class HomePage extends StatefulWidget {
@@ -86,46 +85,15 @@ class _HomePageState extends State<HomePage> {
                   fit: BoxFit.fill,
                 ),
               ),
-              ListTile(
-                onTap: () {
-                  return Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ClubsUI()));
-                },
-                leading: Icon(
-                  Icons.sports_handball,
-                  color: Colors.blue,
-                ),
-                title: Text("Clubs"),
-              ),
-              Divider(
-                thickness: 2,
-              ),
-              ListTile(
-                onTap: () {
-                  return Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Map()));
-                },
-                leading: Icon(
-                  Icons.map,
-                  color: Colors.blue,
-                ),
-                title: Text("Map"),
-              ),
-              Divider(
-                thickness: 2,
-              ),
-              ListTile(
-                onTap: () {
-                  return Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContactUsUI()),
-                  );
-                },
-                leading: Icon(
-                  Icons.phone,
-                  color: Colors.blue,
-                ),
-                title: Text("Contact us"),
+            ),
+            ListTile(
+              onTap: () {
+                return Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ClubsUI()));
+              },
+              leading: Icon(
+                Icons.nature_people,
+                color: Colors.blue,
               ),
               title: Text("Clubs and Departments"),
               //selected: true,
@@ -148,26 +116,13 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blue[600],
                 size: 40,
               ),
-
-
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text('Updates rolling soon...'),
-                    ),
-                  ),
-//                  alignment: Alignment.bottomCenter,
-//                  Align(
-//                    alignment: Alignment.bottomCenter,
-//                    child: Text('Bottom'),
-//                  ),
               title: Text("Contact us"),
 
               //selected: true,
               hoverColor: Colors.blue[100],
             ),
             Divider(
-              thickness: 1,
+              thickness: 2,
             ),
 //            floatingActionButton: FloatingActionButton(
 //    disabledElevation: 2,
@@ -180,6 +135,7 @@ class _HomePageState extends State<HomePage> {
 //    size: 38,
 //    ),
 
+//
           ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
