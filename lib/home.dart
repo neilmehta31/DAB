@@ -82,8 +82,6 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
-
-                child: 
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('images/head.jpeg'),
@@ -178,7 +176,7 @@ class _HomePageState extends State<HomePage> {
               })
         ],
         backgroundColor: Colors.blue,
-        elevation: 50.0,
+        elevation: 0.0,
         centerTitle: true,
       ),
       body: HomeUI(),
