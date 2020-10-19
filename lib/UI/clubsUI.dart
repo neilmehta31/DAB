@@ -45,6 +45,7 @@ class _ClubsUIState extends State<ClubsUI> {
           'For your days at BITS',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.w300, // light
           ),
         ),
         actions: <Widget>[
@@ -67,18 +68,18 @@ class _ClubsUIState extends State<ClubsUI> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(18),
-                bottomRight: Radius.circular(18),
-              )),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
+                  )),
               child: Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Center(
                   child: Text(
-                    'Clubs & Chapter\'s',
+                    'Clubs & Departments',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 18.0,
                       color: Colors.white,
                     ),

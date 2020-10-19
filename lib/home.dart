@@ -8,7 +8,7 @@ import 'package:daysatbits/UI/AboutusUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
 
-import 'UI/ContactusUI.dart';
+import 'UI/ContactusUI.dart' show ContactUsUI;
 import 'UI/clubsUI.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,32 +64,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
 
+      floatingActionButton: FloatingActionButton(
+        disabledElevation: 2,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ContactUsUI()));
+        },
+        child: Icon(
+          Icons.mail,
+          size: 38,
+        ),
+      ),
+
       drawer: Drawer(
           elevation: 16.0,
           child: ListView(
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
-                child: Container(
-                child: Text.rich(
-                  TextSpan(
-                      text: "BITS Pilani\nHyderabad Campus",
-                      style: TextStyle(color: Colors.white, fontSize:20)),
-                      ),
-              alignment: Alignment.bottomLeft,
-              ),
 
-                   // alignment: Alignment.bottomLeft,
-                    // <-- ALIGNMENT
-                    //   height: 10,
-
-
+                child: 
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/drawer_header.jpeg'),
-                    fit: BoxFit.cover,
+                    image: AssetImage('images/head.jpeg'),
+                    fit: BoxFit.fill,
                   ),
-                  color: Colors.blue[400],
+
                 ),
               ),
               ListTile(
@@ -98,10 +98,16 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ClubsUI()));
                 },
                 leading: Icon(
-                  Icons.sports_cricket,
+
+                  Icons.nature_people,
                   color: Colors.blue,
                 ),
                 title: Text("Clubs and Departments"),
+                //selected: true,
+                //enabled: true,
+                focusColor: Colors.deepOrange,
+                hoverColor: Colors.blue[100],
+
               ),
               Divider(
                 thickness: 2,
@@ -119,7 +125,12 @@ class _HomePageState extends State<HomePage> {
                   size: 40,
                 ),
                 title: Text("Contact us"),
-               // contentPadding: EdgeInsets.only(top:500),
+
+                //selected: true,
+                hoverColor: Colors.blue[100],
+              ),
+              Divider(
+                thickness: 4,
 
               ),
     Divider(
@@ -147,9 +158,12 @@ class _HomePageState extends State<HomePage> {
           color: Colors.black,
         ),
         title: Text(
-          'For your days at BITS',
+          'For your Days at BITS',
           style: TextStyle(
-            color: Colors.white,      
+
+            color: Colors.white,
+            fontWeight: FontWeight.w300, // light
+
           ),
         ),
         actions: <Widget>[

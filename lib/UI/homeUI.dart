@@ -60,7 +60,9 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFFFF3 ),
+
+      color: Color(0xF0F0F0),
+
       child: Column(
         children: [
           Container(
@@ -76,7 +78,10 @@ class _HomeUIState extends State<HomeUI> {
                   TextSpan(
                       style: TextStyle(
                         fontSize: 30,
-                        color: Colors.black54,
+
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600, // light
+
                       ),
                       text: "Announcements"),
                 )

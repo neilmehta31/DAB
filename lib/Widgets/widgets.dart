@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeMessage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,18 +20,17 @@ class WelcomeMessage extends StatelessWidget {
           ],
         ),
         Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'LITE!! Nothing new',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'LITE, Nothing new',
+                style: TextStyle(color: Colors.black),
+              ),
+            ],
           ),
+        ),
       ]),
     );
   }
 }
-
