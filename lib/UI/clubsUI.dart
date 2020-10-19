@@ -68,7 +68,7 @@ class _ClubsUIState extends State<ClubsUI> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.white30,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18),
@@ -77,11 +77,11 @@ class _ClubsUIState extends State<ClubsUI> {
                 padding: EdgeInsets.all(10.0),
                 child: Center(
                   child: Text(
-                    'Clubs & Department\'s',
+                    'Clubs & Departments',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 18.0,
-                      color: Colors.black54,
+                      color: Colors.white,
                     ),
                   ),
                 ),
