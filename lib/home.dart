@@ -7,7 +7,7 @@ import 'package:daysatbits/UI/AboutusUI.dart';
 // import 'package:daysatbits/UI/FacultyUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
-
+import 'package:daysatbits/UI/Map.dart';
 import 'UI/ContactusUI.dart';
 import 'UI/clubsUI.dart';
 
@@ -99,10 +99,24 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ClubsUI()));
                 },
                 leading: Icon(
-                  Icons.phone,
+                  Icons.sports_handball,
                   color: Colors.blue,
                 ),
                 title: Text("Clubs"),
+              ),
+              Divider(
+                thickness: 2,
+              ),
+              ListTile(
+                onTap: () {
+                  return Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Map()));
+                },
+                leading: Icon(
+                  Icons.map,
+                  color: Colors.blue,
+                ),
+                title: Text("Map"),
               ),
               Divider(
                 thickness: 2,
@@ -123,8 +137,20 @@ class _HomePageState extends State<HomePage> {
               Divider(
                 thickness: 2,
               ),
-            ],
-          )),
+
+
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text('Updates rolling soon.........'),
+                    ),
+                  ),
+//                  alignment: Alignment.bottomCenter,
+//                  Align(
+//                    alignment: Alignment.bottomCenter,
+//                    child: Text('Bottom'),
+//                  ),
+          ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.black,

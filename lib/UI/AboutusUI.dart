@@ -58,7 +58,7 @@ class AboutUsUI extends StatelessWidget {
                 ),
                 // Image.asset("images/snow.png",height: 150,),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 25.0),
+                  padding: EdgeInsets.only(top:10, bottom: 25.0),
                   child: Text(
                     'All information provided is for general use only and is subject to change.',
                     textAlign: TextAlign.center,
