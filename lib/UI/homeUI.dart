@@ -65,7 +65,7 @@ class _HomeUIState extends State<HomeUI> {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.white12,
+                color: Colors.blue,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
@@ -78,7 +78,7 @@ class _HomeUIState extends State<HomeUI> {
                     TextSpan(
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.black54,
+                          color: Colors.white,
                         ),
                         text: "Announcements"),
                   ),
