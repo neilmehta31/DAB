@@ -63,34 +63,33 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      floatingActionButton: FloatingActionButton(
-        disabledElevation: 2,
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ContactUsUI()));
-        },
-        child: Icon(
-          Icons.mail,
-          size: 38,
-        ),
-      ),
+
       drawer: Drawer(
           elevation: 16.0,
           child: ListView(
             padding: EdgeInsets.only(top: 0),
             children: <Widget>[
               DrawerHeader(
+                child: Container(
                 child: Text.rich(
                   TextSpan(
                       text: "BITS Pilani\nHyderabad Campus",
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                ),
+                      style: TextStyle(color: Colors.white, fontSize:20)),
+                      ),
+              alignment: Alignment.bottomLeft,
+              ),
+
+                   // alignment: Alignment.bottomLeft,
+                    // <-- ALIGNMENT
+                    //   height: 10,
+
+
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('images/drawer_header.jpeg'),
                     fit: BoxFit.cover,
                   ),
-                  color: Colors.blue,
+                  color: Colors.blue[400],
                 ),
               ),
               ListTile(
@@ -99,10 +98,10 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => ClubsUI()));
                 },
                 leading: Icon(
-                  Icons.phone,
+                  Icons.sports_cricket,
                   color: Colors.blue,
                 ),
-                title: Text("Clubs"),
+                title: Text("Clubs and Departments"),
               ),
               Divider(
                 thickness: 2,
@@ -114,17 +113,35 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => ContactUsUI()),
                   );
                 },
-                leading: Icon(
-                  Icons.phone,
-                  color: Colors.blue,
+                trailing: Icon(
+                  Icons.mail,
+                  color: Colors.blue[600],
+                  size: 40,
                 ),
                 title: Text("Contact us"),
+               // contentPadding: EdgeInsets.only(top:500),
+
               ),
-              Divider(
-                thickness: 2,
-              ),
-            ],
-          )),
+    Divider(
+    thickness: 2,
+    ),
+//            floatingActionButton: FloatingActionButton(
+//    disabledElevation: 2,
+//    onPressed: () {
+//    Navigator.push(
+//    context, MaterialPageRoute(builder: (context) => ContactUsUI()));
+//    },
+//    child: Icon(
+//    Icons.mail,
+//    size: 38,
+//    ),
+
+
+
+
+
+//
+          ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.black,
@@ -147,7 +164,7 @@ class _HomePageState extends State<HomePage> {
               })
         ],
         backgroundColor: Colors.blue,
-        elevation: 0.0,
+        elevation: 50.0,
         centerTitle: true,
       ),
       body: HomeUI(),

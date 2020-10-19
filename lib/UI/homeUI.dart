@@ -60,15 +60,15 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF0F0F0),
+      color: Color(0xFFFFF3 ),
       child: Column(
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.white70,
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(18),
-                    bottomRight: Radius.circular(18))),
+                    bottomLeft: Radius.circular(0),
+                    bottomRight: Radius.circular(0))),
             width: double.infinity,
             child: Column(
               children: [
@@ -76,7 +76,7 @@ class _HomeUIState extends State<HomeUI> {
                   TextSpan(
                       style: TextStyle(
                         fontSize: 30,
-                        color: Colors.white,
+                        color: Colors.black54,
                       ),
                       text: "Announcements"),
                 )
@@ -84,7 +84,7 @@ class _HomeUIState extends State<HomeUI> {
             ),
           ),
           // WelcomeMessage(),
-          SizedBox(height: 5.0),
+          SizedBox(height: 0.0),
           Expanded(
             child: Builder(builder: (context) {
               if (posts == null) {
