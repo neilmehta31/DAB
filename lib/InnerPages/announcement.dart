@@ -58,8 +58,10 @@ class _AnnouncementState extends State<Announcement> {
                     height: 100.0,
                     decoration: new BoxDecoration(
                       shape: BoxShape.circle,
-                      image: new DecorationImage(
-                        fit: BoxFit.fill,
+                    ),
+                    child: Container(
+                      child: FadeInImage(
+                        placeholder: AssetImage('images/logo.png'),
                         image: NetworkImage(featureimg),
                       ),
                     ),
@@ -88,13 +90,18 @@ class _AnnouncementState extends State<Announcement> {
                   ),
                 ),
                 Center(
-                    child: new HtmlView(
-                  data: html,
-                  onLaunchFail: (url) {
-                    print("launch $url failed");
-                  },
-                  scrollable: false,
-                )),
+                  child: new HtmlView(
+                    data: html,
+                    onLaunchFail: (url) {
+                      print("launch $url failed");
+                    },
+                    scrollable: false,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                  width: double.infinity,
+                ),
               ],
             ),
           ),

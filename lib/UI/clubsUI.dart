@@ -126,7 +126,10 @@ class _ClubsUIState extends State<ClubsUI> {
                               boxShadow: [new BoxShadow(color: Colors.white)]),
                           child: new ListTile(
                             leading: ClipOval(
-                              child: FadeInImage(placeholder: AssetImage('images/logo.png'), image: NetworkImage(clubs[index]["logo"])),
+                              child: FadeInImage(
+                                placeholder: AssetImage('images/logo.png'),
+                                image: NetworkImage(clubs[index]["logo"]),
+                              ),
                             ),
                             title: new Text(clubs[index]["name"]),
                             subtitle: new Text(clubs[index]["type"]),

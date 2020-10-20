@@ -102,7 +102,7 @@ class _HomeUIState extends State<HomeUI> {
                     controller: scrollController,
                     itemCount: posts == null ? 0 : posts.length,
                     itemBuilder: (BuildContext context, int index) {
-                      if (index == posts.length) {
+                      if (index == posts.length && index <= 30) {
                         return Padding(
                           padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
                           child: Center(

@@ -95,11 +95,10 @@ class _ClubState extends State<Club> {
                       child: new Container(
                         width: 125.0,
                         height: 125.0,
-                        decoration: new BoxDecoration(
-                          image: new DecorationImage(
-                            fit: BoxFit.fill,
-                            image: new NetworkImage(logo),
-                          ),
+                        child: Container(
+                          child: FadeInImage(
+                              placeholder: AssetImage('images/logo.png'),
+                              image: NetworkImage(logo)),
                         ),
                       ),
                     ),

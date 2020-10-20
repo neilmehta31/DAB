@@ -3,13 +3,9 @@ import 'dart:ui';
 import 'package:daysatbits/UI/Map.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/AboutusUI.dart';
-// import 'package:daysatbits/UI/ToolsUI.dart';
-// import 'package:daysatbits/UI/ContactusUI.dart';
-// import 'package:daysatbits/UI/FacultyUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
-
-import 'UI/ContactusUI.dart' show ContactUsUI;
+import 'UI/ContactusUI.dart';
 import 'UI/clubsUI.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,68 +60,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-//      floatingActionButton: FloatingActionButton(
-//        disabledElevation: 2,
-//        onPressed: () {
-//          Navigator.push(
-//              context, MaterialPageRoute(builder: (context) => ContactUsUI()));
-//        },
-//        child: Icon(
-//          Icons.mail,
-//          size: 38,
-//        ),
-//      ),
-
       drawer: Drawer(
           elevation: 16.0,
-          child: ListView(padding: EdgeInsets.only(top: 0),
-              children: <Widget>[
+          child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
             DrawerHeader(
-//          child: Container(
-//              child: Text.rich(
-//              TextSpan(
-//              text: "BITS Pilani\nHyderabad Campus",
-//
-//
-//              style: TextStyle(color: Colors.white, fontSize:20)),
-//              ),
-//            alignment: Alignment.bottomLeft,
-//                ),
-//
-//
-//
-//              decoration: BoxDecoration(
-//                image: DecorationImage(
-//                  image: AssetImage('images/head.jpeg'),
-//                  fit: BoxFit.fill,
-//
-//                )),
-//
-
               child: Container(
-              child: Text.rich(
-              TextSpan(
-              text: "BITS Pilani\nHyderabad Campus",
-              style: TextStyle(color: Colors.white, fontSize: 20)),
-
-                      style: TextStyle(color: Colors.white, fontSize:20)),
-
-                          alignment: Alignment.bottomLeft,
-
+                child: Text.rich(
+                    TextSpan(
+                        text: "BITS Pilani\nHyderabad Campus",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    style: TextStyle(color: Colors.white, fontSize: 20)),
+                alignment: Alignment.bottomLeft,
               ),
-
-    // alignment: Alignment.bottomLeft,
-    // <-- ALIGNMENT
-    //   height: 10,
-
-
-    decoration: BoxDecoration(
-    image: DecorationImage(
-    image: AssetImage('images/head.jpeg'),
-    fit: BoxFit.cover,
-    ),
-
-    ),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/head.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             ListTile(
               onTap: () {
@@ -147,8 +99,8 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               onTap: () {
-                return Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Map()));
+                return Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Map()));
               },
               leading: Icon(
                 Icons.map,
@@ -157,7 +109,7 @@ class _HomePageState extends State<HomePage> {
               title: Text("Map"),
             ),
             Divider(
-              thickness: 2,
+              thickness: 1,
             ),
             ListTile(
               onTap: () {
@@ -169,7 +121,6 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(
                 Icons.mail,
                 color: Colors.blue[600],
-
               ),
               title: Text("Contact us"),
 
@@ -179,23 +130,10 @@ class _HomePageState extends State<HomePage> {
             Divider(
               thickness: 1,
             ),
-//            floatingActionButton: FloatingActionButton(
-//    disabledElevation: 2,
-//    onPressed: () {
-//    Navigator.push(
-//    context, MaterialPageRoute(builder: (context) => ContactUsUI()));
-//    },
-//    child: Icon(
-//    Icons.mail,
-//    size: 38,
-//    ),
-                Expanded(
-                  child: Align(
-
-                    alignment: Alignment.bottomCenter,
-                    child: Text('Updates rolling soon.........'),
-                  ),
-                ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Text('Updates rolling soon...'),
+            ),
 //                  alignment: Alignment.bottomCenter,
 //                  Align(
 //                    alignment: Alignment.bottomCenter,

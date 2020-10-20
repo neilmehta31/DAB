@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:daysatbits/UI/AboutusUI.dart';
+import 'package:daysatbits/UI/homeUI.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -26,18 +28,46 @@ class MapSampleState extends State<MapSample> {
   static final CameraPosition _kGooglePlex = CameraPosition(
     bearing: 292.8334901395799,
     target: LatLng(17.544052, 78.573799),
-    zoom:16.3746,
+    zoom: 16.3746,
   );
 
   static final CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
-      target: LatLng(17.544922,  78.571550),
+      target: LatLng(17.544922, 78.571550),
       tilt: 59.440717697143555,
-      zoom:18.951926040649414);
+      zoom: 18.951926040649414);
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        title: Text(
+          'Map',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500, // light
+          ),
+        ),
+        leading: Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.info,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AboutUsUI()));
+              }),
+        ],
+        centerTitle: true,
+      ),
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
