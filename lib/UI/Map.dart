@@ -40,34 +40,6 @@ class MapSampleState extends State<MapSample> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.white,
-        ),
-        title: Text(
-          'Map',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w500, // light
-          ),
-        ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.info,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AboutUsUI()));
-              }),
-        ],
-        centerTitle: true,
-      ),
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
