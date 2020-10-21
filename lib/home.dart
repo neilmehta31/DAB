@@ -131,15 +131,21 @@ class _HomePageState extends State<HomePage> {
               thickness: 1,
             ),
             Align(
-              alignment: Alignment.bottomCenter,
-              child: Text('Updates rolling soon...'),
-            ),
-//                  alignment: Alignment.bottomCenter,
-//                  Align(
-//                    alignment: Alignment.bottomCenter,
-//                    child: Text('Bottom'),
-
-//
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 30.0),
+                  child: Text.rich(
+                    TextSpan(
+                      text: '\n Updates rolling soon...',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w300, fontSize: 14.0),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            )
           ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
