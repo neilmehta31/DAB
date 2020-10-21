@@ -6,13 +6,31 @@ import 'AboutusUI.dart';
 class ContactUsUI extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _subjectController = TextEditingController();
-  final TextEditingController _bodyController = TextEditingController();
+  final TextEditingController _feedbackController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
 
-  _sendEmail() async {
+  _submitform() async {
+    final String _form =
+        'https://docs.google.com/forms/d/e/1FAIpQLSc4qp8RABQEyrtVXT6ZfIdfZbUgEUM7X7BJAcSgdpVVncqBTg' +
+            '/viewform?usp=pp_url' +
+            '&entry.1652358000=' +
+            _nameController.text +
+            '&entry.1065594283=' +
+            _emailController.text +
+            '&entry.296034823=' +
+            _subjectController.text +
+            '&entry.40522245=' +
+            _feedbackController.text;
+    try {
+      await launch(_form);
+    } catch (e) {
+      throw 'Could not submit';
+    }
+  }
+
+  /* _sendEmail() async {
     final String _email = 'mailto:' +
-        'contact@vitdayz.com' +
+        'dayatbits@gmail.com' +
         '?subject=' +
         _subjectController.text +
         '&body=' +
@@ -32,7 +50,7 @@ class ContactUsUI extends StatelessWidget {
       throw 'Could not mail';
     }
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +109,7 @@ class ContactUsUI extends StatelessWidget {
                       labelText: 'Name',
                     ),
                   ),
-                  new TextFormField(
+                  /*            new TextFormField(
                     controller: _phoneController,
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.phone),
@@ -100,6 +118,7 @@ class ContactUsUI extends StatelessWidget {
                     ),
                     keyboardType: TextInputType.phone,
                   ),
+      */
                   new TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
@@ -118,16 +137,16 @@ class ContactUsUI extends StatelessWidget {
                   ),
                   new TextFormField(
                     maxLines: 2,
-                    controller: _bodyController,
+                    controller: _feedbackController,
                     decoration: const InputDecoration(
                       icon: const Icon(Icons.message),
-                      labelText: 'Body',
+                      labelText: 'Feedback',
                     ),
                   ),
                   RaisedButton(
-                    child: Text('Send Email'),
+                    child: Text('Send'),
                     color: Colors.deepOrange[300],
-                    onPressed: _sendEmail,
+                    onPressed: _submitform,
                   ),
                 ],
               ),
