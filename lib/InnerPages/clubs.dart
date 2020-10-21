@@ -171,12 +171,19 @@ class _ClubState extends State<Club> {
                 ],
               ),
               SizedBox(height: 8.0),
-              Text(
-                "Social Profiles:",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              twitter != "" ||
+                      fb != "" ||
+                      insta != "" ||
+                      linkedin != "" ||
+                      youtube != "" ||
+                      website != ""
+                  ? Text(
+                      "Social Profiles:",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  : Visibility(child: SizedBox.shrink()),
               SizedBox(height: 8.0),
               Column(
                 children: [
@@ -240,7 +247,7 @@ class _ClubState extends State<Club> {
                                 ),
                               )
                             : Container(),
-                            // TODO: Do not remove the following comment. Maybe it may be of some use in future
+                        // TODO: Do not remove the following comment. Maybe it may be of some use in future
                         // linkedin != ""
                         //     ? GestureDetector(
                         //         onTap: () {
