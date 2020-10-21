@@ -8,7 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 //void main() => runApp(Map());
 
-class Map extends StatelessWidget {
+class MapUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

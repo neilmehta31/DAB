@@ -1,12 +1,10 @@
 import 'dart:ui';
 
-import 'package:daysatbits/UI/Map.dart';
+import 'package:daysatbits/Widgets/drawerUI.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/AboutusUI.dart';
-import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:daysatbits/UI/homeUI.dart';
-import 'UI/ContactusUI.dart';
-import 'UI/clubsUI.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,238 +15,116 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
-  int _currentIndex = 1;
-
-  // Widget _body() {
-  //   return Stack(
-  //     children: List<Widget>.generate(3, (int index) {
-  //       return IgnorePointer(
-  //         ignoring: index != _currentIndex,
-  //         child: Opacity(
-  //           opacity: _currentIndex == index ? 1.0 : 0.0,
-  //           child: Navigator(
-  //             onGenerateRoute: (RouteSettings settings) {
-  //               return new MaterialPageRoute(
-  //                 builder: (_) => _page(index),
-  //                 settings: settings,
-  //               );
-  //             },
-  //           ),
-  //         ),
-  //       );
-  //     }),
-  //   );
-  // }
-
-  // Widget _page(int index) {
-  //   switch (index) {
-  //     // case 0:
-  //     //   return Tools();
-  //     case 0:
-  //       return ClubsUI();
-  //     case 1:
-  //       return HomeUI();
-  //     // case 2:
-  //     //   return FacultyUI();
-  //     case 2:
-  //       return ContactUsUI();
-  //   }
-
-  //   throw "Invalid index $index";
-  // }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      drawer: Drawer(
-          elevation: 16.0,
-          child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
-            DrawerHeader(
-              child: Container(
-                child: Text.rich(
-                    TextSpan(
-                        text: "BITS Pilani\nHyderabad Campus",
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
-                    style: TextStyle(color: Colors.white, fontSize: 20)),
-                alignment: Alignment.bottomLeft,
-              ),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/head.jpeg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () {
-                return Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ClubsUI()));
-              },
-              leading: Icon(
-                Icons.sports_handball,
-                color: Colors.blue,
-              ),
-              title: Text("Clubs and Departments"),
-              //selected: true,
-              //enabled: true,
-              focusColor: Colors.deepOrange,
-              hoverColor: Colors.blue[100],
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            ListTile(
-              onTap: () {
-                return Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Map()));
-              },
-              leading: Icon(
-                Icons.map,
-                color: Colors.blue,
-              ),
-              title: Text("Map"),
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            ListTile(
-              onTap: () {
-                return Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ContactUsUI()),
-                );
-              },
-              leading: Icon(
-                Icons.mail,
-                color: Colors.blue[600],
-              ),
-              title: Text("Contact us"),
-
-              //selected: true,
-              hoverColor: Colors.blue[100],
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            Align(
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 30.0),
-                  child: Text.rich(
-                    TextSpan(
-                      text: '\n Updates rolling soon...',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w300, fontSize: 14.0),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            )
-          ])),
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.white,
-        ),
-        title: Text(
-          'For your Days at BITS',
-          style: TextStyle(
+    return WillPopScope(
+      onWillPop: (){SystemNavigator.pop();},
+          child: new Scaffold(
+        drawer: DrawerUI(),
+        appBar: AppBar(
+          iconTheme: IconThemeData(
             color: Colors.white,
-            fontWeight: FontWeight.w300, // light
           ),
+          title: Text(
+            'For your Days at BITS',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w300, // light
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.info,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutUsUI()));
+                })
+          ],
+          backgroundColor: Colors.blue,
+          elevation: 0.0,
+          centerTitle: true,
         ),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.info,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AboutUsUI()));
-              })
-        ],
-        backgroundColor: Colors.blue,
-        elevation: 0.0,
-        centerTitle: true,
+        body: HomeUI(),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   currentIndex: _currentIndex,
+        //   items: [
+        //     // BottomNavigationBarItem(
+        //     //   icon: Icon(
+        //     //     Icons.apps,
+        //     //     color: Colors.black,
+        //     //   ),
+        //     //   title: Text(
+        //     //     'Tools',
+        //     //     style: TextStyle(
+        //     //       color: Colors.black,
+        //     //     ),
+        //     //   ),
+        //     //   backgroundColor: Colors.red,
+        //     // ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.palette,
+        //         color: Colors.black,
+        //       ),
+        //       title: Text(
+        //         'Clubs',
+        //         style: TextStyle(
+        //           color: Colors.black,
+        //         ),
+        //       ),
+        //       backgroundColor: Colors.red,
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.home,
+        //         color: Colors.black,
+        //       ),
+        //       title: Text(
+        //         'Home',
+        //         style: TextStyle(
+        //           color: Colors.black,
+        //         ),
+        //       ),
+        //       backgroundColor: Colors.red,
+        //     ),
+        //     // BottomNavigationBarItem(
+        //     //   icon: Icon(
+        //     //     Icons.person,
+        //     //     color: Colors.black,
+        //     //   ),
+        //     //   title: Text(
+        //     //     'Faculty',
+        //     //     style: TextStyle(
+        //     //       color: Colors.black,
+        //     //     ),
+        //     //   ),
+        //     //   backgroundColor: Colors.red,
+        //     // ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.phone,
+        //         color: Colors.black,
+        //       ),
+        //       title: Text(
+        //         'Reach Us',
+        //         style: TextStyle(
+        //           color: Colors.black,
+        //         ),
+        //       ),
+        //       backgroundColor: Colors.red,
+        //     ),
+        //   ],
+        //   onTap: (index) {
+        //     setState(() {
+        //       _currentIndex = index;
+        //     });
+        //   },
+        // ),
       ),
-      body: HomeUI(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _currentIndex,
-      //   items: [
-      //     // BottomNavigationBarItem(
-      //     //   icon: Icon(
-      //     //     Icons.apps,
-      //     //     color: Colors.black,
-      //     //   ),
-      //     //   title: Text(
-      //     //     'Tools',
-      //     //     style: TextStyle(
-      //     //       color: Colors.black,
-      //     //     ),
-      //     //   ),
-      //     //   backgroundColor: Colors.red,
-      //     // ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.palette,
-      //         color: Colors.black,
-      //       ),
-      //       title: Text(
-      //         'Clubs',
-      //         style: TextStyle(
-      //           color: Colors.black,
-      //         ),
-      //       ),
-      //       backgroundColor: Colors.red,
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.home,
-      //         color: Colors.black,
-      //       ),
-      //       title: Text(
-      //         'Home',
-      //         style: TextStyle(
-      //           color: Colors.black,
-      //         ),
-      //       ),
-      //       backgroundColor: Colors.red,
-      //     ),
-      //     // BottomNavigationBarItem(
-      //     //   icon: Icon(
-      //     //     Icons.person,
-      //     //     color: Colors.black,
-      //     //   ),
-      //     //   title: Text(
-      //     //     'Faculty',
-      //     //     style: TextStyle(
-      //     //       color: Colors.black,
-      //     //     ),
-      //     //   ),
-      //     //   backgroundColor: Colors.red,
-      //     // ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.phone,
-      //         color: Colors.black,
-      //       ),
-      //       title: Text(
-      //         'Reach Us',
-      //         style: TextStyle(
-      //           color: Colors.black,
-      //         ),
-      //       ),
-      //       backgroundColor: Colors.red,
-      //     ),
-      //   ],
-      //   onTap: (index) {
-      //     setState(() {
-      //       _currentIndex = index;
-      //     });
-      //   },
-      // ),
     );
   }
 }
