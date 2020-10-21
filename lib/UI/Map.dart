@@ -1,7 +1,4 @@
 import 'dart:async';
-
-import 'package:daysatbits/UI/AboutusUI.dart';
-import 'package:daysatbits/UI/homeUI.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -21,6 +18,7 @@ class Map extends StatelessWidget {
 class MapSample extends StatefulWidget {
   @override
   State<MapSample> createState() => MapSampleState();
+
 }
 
 class MapSampleState extends State<MapSample> {
@@ -39,23 +37,23 @@ class MapSampleState extends State<MapSample> {
       zoom: 18.951926040649414);
 
   static final CameraPosition _kGate = CameraPosition(
-      bearing: 192.8334901395799,
+      bearing:192.8334901395799,
       target: LatLng(17.547200, 78.572494),
-      tilt: 40.440717697143555,
+      tilt: 59.440717697143555,
       zoom: 19.951926040649414);
 
   static final CameraPosition _kSac = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(17.540850, 18.575262),
-      tilt: 400.440717697143555,
-      zoom: 18.951926040649414);
+      bearing: 360.8334901395799,
+      target: LatLng(17.540850, 78.575262),
+      tilt: 59.440717697143555,
+      zoom: 19.951926040649414);
 //
 
   static final CameraPosition _kCricket = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(17.540021, 18.577456),
-      tilt: 350.440717697143555,
-      zoom: 18.951926040649414);
+      bearing: 350.8334901395799,
+      target: LatLng(17.540021, 78.577456),
+      tilt: 89.440717697143555,
+      zoom: 19.51926040649414);
 
   @override
   Widget build(BuildContext context) {
@@ -127,3 +125,4 @@ class MapSampleState extends State<MapSample> {
     controller.animateCamera(CameraUpdate.newCameraPosition(_kCricket));
   }
 }
+
