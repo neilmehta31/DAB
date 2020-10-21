@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:date_format/date_format.dart';
 
+
 class HomeUI extends StatefulWidget {
   @override
   _HomeUIState createState() => _HomeUIState();
@@ -65,7 +66,7 @@ class _HomeUIState extends State<HomeUI> {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.white10,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
@@ -78,7 +79,7 @@ class _HomeUIState extends State<HomeUI> {
                     TextSpan(
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.white,
+                          color: Colors.black54,
                         ),
                         text: "Announcements"),
                   ),

@@ -131,21 +131,34 @@ class _HomePageState extends State<HomePage> {
               thickness: 1,
             ),
             Align(
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 30.0),
-                  child: Text.rich(
-                    TextSpan(
-                      text: '\n Updates rolling soon...',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w300, fontSize: 14.0),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            )
+//<<<<<<< HEAD
+//              child: Align(
+//                alignment: FractionalOffset.bottomCenter,
+//                child: Padding(
+//                  padding: EdgeInsets.only(bottom: 30.0),
+//                  child: Text.rich(
+//                    TextSpan(
+//                      text: '\n Updates rolling soon...',
+//                      style: TextStyle(
+//                          fontWeight: FontWeight.w300, fontSize: 14.0),
+//                    ),
+//                    textAlign: TextAlign.center,
+//                  ),
+//                ),
+//              ),
+//            )
+//=======
+              heightFactor: 30,
+              alignment: Alignment.bottomCenter,
+              child: Text('Updates rolling soon...'),
+            ),
+//                  alignment: Alignment.bottomCenter,
+//                  Align(
+//                    alignment: Alignment.bottomCenter,
+//                    child: Text('Bottom'),
+
+//
+//>>>>>>> 6d3705a... buttons fixed
           ])),
       appBar: AppBar(
         iconTheme: IconThemeData(
