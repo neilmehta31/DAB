@@ -73,21 +73,22 @@ class _ClubsUIState extends State<ClubsUI> {
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18),
                   )),
-              child: Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Center(
-                  child: Text(
-                    'Clubs & Departments',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18.0,
-                      color: Colors.white,
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'Clubs & Departments',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
+                    Padding(padding: EdgeInsets.only(bottom: 7))
+                  ],
                 ),
               ),
             ),
-            SizedBox(height: 5.0),
             Expanded(child: Builder(builder: (context) {
               if (clubs == null) {
                 return Center(

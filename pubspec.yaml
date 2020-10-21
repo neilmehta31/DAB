@@ -60,6 +60,12 @@ flutter:
     - images/bits.jpeg
     - images/logo_white.png
     - images/splash.gif
+    - images/facebook.png
+    - images/browser.png
+    - images/instagram.png
+    - images/linkedin.png
+    - images/twitter.png
+    - images/youtube.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

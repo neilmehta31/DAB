@@ -28,29 +28,6 @@ class ContactUsUI extends StatelessWidget {
     }
   }
 
-  /* _sendEmail() async {
-    final String _email = 'mailto:' +
-        'dayatbits@gmail.com' +
-        '?subject=' +
-        _subjectController.text +
-        '&body=' +
-        'Name:' +
-        _nameController.text +
-        ';  ' +
-        'Email:' +
-        _emailController.text +
-        ';  ' +
-        'Phone number:' +
-        _phoneController.text +
-        ';  ' +
-        _bodyController.text;
-    try {
-      await launch(_email);
-    } catch (e) {
-      throw 'Could not mail';
-    }
-  }
-*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
