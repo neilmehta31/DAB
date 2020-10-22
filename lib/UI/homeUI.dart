@@ -8,7 +8,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:date_format/date_format.dart';
 
-
 class HomeUI extends StatefulWidget {
   @override
   _HomeUIState createState() => _HomeUIState();
@@ -66,7 +65,7 @@ class _HomeUIState extends State<HomeUI> {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: Colors.white10,
+                color: Colors.blue,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),
@@ -79,7 +78,7 @@ class _HomeUIState extends State<HomeUI> {
                     TextSpan(
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.black54,
+                          color: Colors.white,
                         ),
                         text: "Announcements"),
                   ),
@@ -100,10 +99,12 @@ class _HomeUIState extends State<HomeUI> {
                 return RefreshIndicator(
                   onRefresh: refresh,
                   child: ListView.builder(
+                    physics: const BouncingScrollPhysics(
+                        parent: AlwaysScrollableScrollPhysics()),
                     controller: scrollController,
                     itemCount: posts == null ? 0 : posts.length,
                     itemBuilder: (BuildContext context, int index) {
-                      if (index == posts.length && index <= 30) {
+                      if (index == posts.length && posts.length <= 30) {
                         return Padding(
                           padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
                           child: Center(

@@ -54,8 +54,8 @@ class _AnnouncementState extends State<Announcement> {
               children: <Widget>[
                 Center(
                   child: new Container(
-                    width: 100.0,
-                    height: 100.0,
+                    width: 150.0,
+                    height: 150.0,
                     decoration: new BoxDecoration(
                       shape: BoxShape.circle,
                     ),

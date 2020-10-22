@@ -32,13 +32,9 @@ class DrawerUI extends StatelessWidget {
             },
             leading: Icon(
               Icons.sports_handball,
-              color: Colors.blue,
+              color: Colors.purple,
             ),
             title: Text("Clubs and Departments"),
-            //selected: true,
-            //enabled: true,
-            focusColor: Colors.deepOrange,
-            hoverColor: Colors.blue[100],
           ),
           Divider(
             thickness: 1,
@@ -50,7 +46,7 @@ class DrawerUI extends StatelessWidget {
             },
             leading: Icon(
               Icons.map,
-              color: Colors.blue,
+              color: Colors.green,
             ),
             title: Text("Map"),
           ),
@@ -66,7 +62,7 @@ class DrawerUI extends StatelessWidget {
             },
             leading: Icon(
               Icons.mail,
-              color: Colors.blue[600],
+              color: Colors.orange,
             ),
             title: Text("Contact us"),
             hoverColor: Colors.blue[100],

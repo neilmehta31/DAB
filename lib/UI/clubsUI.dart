@@ -68,7 +68,7 @@ class _ClubsUIState extends State<ClubsUI> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18),
@@ -83,7 +83,7 @@ class _ClubsUIState extends State<ClubsUI> {
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 18.0,
-                          color: Colors.black54,
+                          color: Colors.white,
                         ),
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 7))
@@ -99,6 +99,7 @@ class _ClubsUIState extends State<ClubsUI> {
                 );
               } else {
                 return ListView.builder(
+                  physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                   itemCount: clubs == null ? 0 : clubs.length,
                   itemBuilder: (BuildContext context, int index) {
                     return new GestureDetector(
