@@ -15,7 +15,7 @@ class AboutUsUI extends StatelessWidget {
         ),
         body: Container(
           color: Colors.white,
-          padding: EdgeInsets.only(top: 25.0, left: 8.0, right: 8.0),
+          padding: EdgeInsets.only(top: 0.0, left: 8.0, right: 8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -27,7 +27,7 @@ class AboutUsUI extends StatelessWidget {
                     height: 200,
                     width: 450,
                   ),
-                  SizedBox(height: 8.0),
+                  SizedBox(height: 5.0),
                   Text('Copyright © DaysAtBITS',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class AboutUsUI extends StatelessWidget {
                   ),
                   SizedBox(height: 5.0),
                   Text(
-                    'Your number one source for all BITS Hyderabad Anoucements. We’re dedicated to providing you, up to Date updates about everything that’s happening in our campus. The app is under development.',
+                    'Your best source for all BITS Hyderabad Anoucements. We’re dedicated at providing you, up to date updates about everything that is happening in our campus. The app is under development.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class AboutUsUI extends StatelessWidget {
                     TextSpan(
                       text: "New updates coming soon!",
                       style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 22.0),
+                          fontWeight: FontWeight.w300, fontSize: 22.0),
                     ),
                   ),
                 ),
