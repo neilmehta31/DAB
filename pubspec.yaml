@@ -56,8 +56,8 @@ flutter:
   assets:
     - images/logo.png
     - images/logo_daysatbits.jpeg
-    - images/head.jpeg
-    - images/bits.jpeg
+    - images/head.jpg
+    - images/bits.jpg
     - images/logo_white.png
     - images/splash.gif
     - images/facebook.png

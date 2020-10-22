@@ -23,7 +23,7 @@ class AboutUsUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    "images/bits.jpeg",
+                    "images/bits.jpg",
                     height: 200,
                     width: 450,
                   ),
