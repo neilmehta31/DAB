@@ -19,8 +19,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){SystemNavigator.pop();},
-          child: new Scaffold(
+      onWillPop: () {
+        SystemNavigator.pop();
+      },
+      child: new Scaffold(
         drawer: DrawerUI(),
         appBar: AppBar(
           iconTheme: IconThemeData(

@@ -66,6 +66,17 @@ class _HomeUIState extends State<HomeUI> {
           Container(
             decoration: BoxDecoration(
                 color: Colors.blue,
+                /*  gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(
+                      0.9, 0.7), // 10% of the width, so there are ten blinds.
+                  colors: [
+                    const Color(0xff00c2c7),
+                    const Color(0xff009fff)
+                  ],
+                  tileMode:
+                      TileMode.clamp, 
+                ),*/
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18))),

@@ -20,7 +20,7 @@ class DrawerUI extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/head.jpeg'),
+                image: AssetImage('images/head.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

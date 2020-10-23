@@ -86,16 +86,6 @@ class ContactUsUI extends StatelessWidget {
                       labelText: 'Name',
                     ),
                   ),
-                  /*            new TextFormField(
-                    controller: _phoneController,
-                    decoration: const InputDecoration(
-                      icon: const Icon(Icons.phone),
-                      hintText: 'Enter your phone number',
-                      labelText: 'Phone',
-                    ),
-                    keyboardType: TextInputType.phone,
-                  ),
-      */
                   new TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
@@ -122,7 +112,7 @@ class ContactUsUI extends StatelessWidget {
                   ),
                   RaisedButton(
                     child: Text('Send'),
-                    color: Colors.deepOrange[300],
+                    color: Colors.orange[500],
                     onPressed: _submitform,
                   ),
                 ],
