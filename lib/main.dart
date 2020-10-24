@@ -1,4 +1,4 @@
-
+import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:daysatbits/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/home.dart';
@@ -11,10 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      title: 'Days At BITS',
-      home: SplashScreen(),
+    return ConnectivityAppWrapper(
+          app: MaterialApp(
+        debugShowCheckedModeBanner: true,
+        title: 'Days At BITS',
+        home: SplashScreen(),
+      ),
     );
   }
 }

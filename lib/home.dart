@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:daysatbits/Widgets/drawerUI.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/AboutusUI.dart';
@@ -50,7 +51,12 @@ class _HomePageState extends State<HomePage> {
           elevation: 0.0,
           centerTitle: true,
         ),
-        body: HomeUI(),
+        body: ConnectivityWidgetWrapper(
+          alignment: Alignment.bottomCenter,
+          message: "PLease connect to the internet",
+          disableInteraction: false,
+          child: HomeUI(),
+        ),
         // bottomNavigationBar: BottomNavigationBar(
         //   currentIndex: _currentIndex,
         //   items: [
