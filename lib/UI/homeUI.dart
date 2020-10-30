@@ -1,6 +1,5 @@
 import 'package:daysatbits/Widgets/shimmerUI.dart';
 import 'package:flutter/material.dart';
-// import 'package:daysatbits/Widgets/widgets.dart';
 import 'package:daysatbits/InnerPages/announcement.dart';
 import 'dart:async';
 import 'dart:convert';

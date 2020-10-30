@@ -2,6 +2,8 @@ import 'package:daysatbits/UI/ContactusUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/mapUI.dart';
+import 'package:daysatbits/UI/Calendar.dart';
+
 
 class DrawerUI extends StatelessWidget {
   @override
@@ -53,6 +55,21 @@ class DrawerUI extends StatelessWidget {
           Divider(
             thickness: 1,
           ),
+          ListTile(
+            onTap: () {
+    return Navigator.push(
+    context, MaterialPageRoute(builder: (context) => Calendar()));
+    },
+    leading: Icon(
+    Icons.sports_handball,
+    color: Colors.purple,
+    ),
+    title: Text("Calendar"),
+    ),
+    Divider(
+    thickness: 1,
+    ),
+
           ListTile(
             onTap: () {
               return Navigator.push(
