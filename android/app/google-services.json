@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "688337557047",
+    "firebase_url": "https://daysatbits-e1fdd.firebaseio.com",
+    "project_id": "daysatbits-e1fdd",
+    "storage_bucket": "daysatbits-e1fdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688337557047:android:b145eebd8813de4e8411b2",
+        "android_client_info": {
+          "package_name": "com.pocketdocs.daysatbits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688337557047-78cp7suspdbndmdknnqn0l2gbvu4mcts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKMCtcePTv8mKCFNEigSOncgr9gnD_jgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688337557047-78cp7suspdbndmdknnqn0l2gbvu4mcts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
