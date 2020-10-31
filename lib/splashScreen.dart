@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-        Duration(milliseconds: 2200),
+        Duration(milliseconds: 2400),
         () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage())));
   }
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
           color: Colors.black,
           child: Image.asset('images/splash.gif'),
           width: MediaQuery.of(context).size.width,
-          height: 500,            
+          height: 500,
         ),
       ),
     );

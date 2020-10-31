@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/mapUI.dart';
 import 'package:daysatbits/UI/Calendar.dart';
 
-
 class DrawerUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,19 +56,18 @@ class DrawerUI extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-    return Navigator.push(
-    context, MaterialPageRoute(builder: (context) => Calendar()));
-    },
-    leading: Icon(
-    Icons.sports_handball,
-    color: Colors.purple,
-    ),
-    title: Text("Calendar"),
-    ),
-    Divider(
-    thickness: 1,
-    ),
-
+              return Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Calendar()));
+            },
+            leading: Icon(
+              Icons.date_range,
+              color: Colors.blue,
+            ),
+            title: Text("Calendar"),
+          ),
+          Divider(
+            thickness: 1,
+          ),
           ListTile(
             onTap: () {
               return Navigator.push(

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-
 class Calendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       title: ' Calendar',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -35,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(' Calendar'),
+        title: Text('BITS Calendar'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -54,20 +52,19 @@ class _HomePageState extends State<HomePage> {
                 centerHeaderTitle: true,
                 formatButtonDecoration: BoxDecoration(
                   color: Colors.orange,
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(25.0),
                 ),
                 formatButtonTextStyle: TextStyle(color: Colors.white),
                 formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.sunday,
-
               builders: CalendarBuilders(
                 selectedDayBuilder: (context, date, events) => Container(
                     margin: const EdgeInsets.all(4.0),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(25.0)),
                     child: Text(
                       date.day.toString(),
                       style: TextStyle(color: Colors.white),
@@ -76,11 +73,12 @@ class _HomePageState extends State<HomePage> {
                     margin: const EdgeInsets.all(4.0),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(10.0)),
+                        color: Colors.orange[500],
+                        borderRadius: BorderRadius.circular(25.0)),
                     child: Text(
                       date.day.toString(),
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w900),
                     )),
               ),
               calendarController: _controller,
