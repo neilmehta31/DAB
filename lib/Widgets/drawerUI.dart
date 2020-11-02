@@ -2,7 +2,6 @@ import 'package:daysatbits/UI/ContactusUI.dart';
 import 'package:daysatbits/UI/clubsUI.dart';
 import 'package:flutter/material.dart';
 import 'package:daysatbits/UI/mapUI.dart';
-import 'package:daysatbits/UI/Calendar.dart';
 
 class DrawerUI extends StatelessWidget {
   @override
