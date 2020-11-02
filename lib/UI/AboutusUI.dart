@@ -13,6 +13,7 @@ class AboutUsUI extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
         ),
+        //change
         body: Container(
           color: Colors.white,
           padding: EdgeInsets.only(top: 0.0, left: 8.0, right: 8.0),
