@@ -23,8 +23,10 @@ dependencies:
   splashscreen : ^1.2.0
   syncfusion_flutter_calendar : ^18.3.44
   flutter_speed_dial: ^1.2.5
-  table_calendar: ^2.3.0
   cupertino_icons: ^0.1.2
+  firebase_helpers: ^0.1.8
+  table_calendar: ^2.2.3
+  cloud_firestore: ^0.13.5
 #  shared_preferences: ^0.5.4+5
 #  shared_preferences: ^0.5.12
 
