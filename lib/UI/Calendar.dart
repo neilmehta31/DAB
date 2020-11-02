@@ -8,7 +8,7 @@ import 'package:table_calendar/table_calendar.dart';
 
 // import 'model/event.dart';
 
-class Calender extends StatelessWidget {
+class Calendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -97,11 +97,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                     startingDayOfWeek: StartingDayOfWeek.monday,
                     // onDaySelected:(date,events){},
-                    onDaySelected: (date, events) {
-                      setState(() {
-                        _selectedEvents = events;
-                      });
-                    },
+                    // (DateTime date, List<Event> events) {
+                    //   this.setState(() => _currentDate = date);
+                    //   events.forEach((event) => print(event.title));
+                    // },
+
                     builders: CalendarBuilders(
                       selectedDayBuilder: (context, date, events) => Container(
                           margin: const EdgeInsets.all(4.0),
@@ -126,17 +126,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                     calendarController: _controller,
                   ),
-                  ..._selectedEvents.map((event) => ListTile(
-                        title: Text(event.title),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => EventDetailsPage(
-                                        event: event,
-                                      )));
-                        },
-                      )),
+                  ..._selectedEvents.map(
+                    (event) => ListTile(
+                      title: Text(event.title),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => EventDetailsPage(
+                                      event: event,
+                                    )));
+                      },
+                    ),
+                  ),
                 ],
               ),
             );
