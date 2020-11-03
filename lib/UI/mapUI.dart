@@ -5,23 +5,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 //void main() => runApp(Map());
 
-class MapUI extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Map',
-      home: MapSample(),
-    );
-  }
-}
 
-class MapSample extends StatefulWidget {
+class MapUI extends StatefulWidget {
   @override
-  State<MapSample> createState() => MapSampleState();
+  State<MapUI> createState() => MapUIState();
 
 }
 
-class MapSampleState extends State<MapSample> {
+class MapUIState extends State<MapUI> {
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kCampus = CameraPosition(
