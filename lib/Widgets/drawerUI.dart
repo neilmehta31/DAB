@@ -54,20 +54,21 @@ class DrawerUI extends StatelessWidget {
           Divider(
             thickness: 1,
           ),
-          ListTile(
-            onTap: () {
-              return Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Calendar()));
-            },
-            leading: Icon(
-              Icons.date_range,
-              color: Colors.blue,
-            ),
-            title: Text("Calendar"),
-          ),
-          Divider(
-            thickness: 1,
-          ),
+          //TODO: Do not remove this comment as this is the code for navigating to Calendar UI which will be implemented in comming releases.
+          // ListTile(
+          //   onTap: () {
+          //     return Navigator.push(
+          //         context, MaterialPageRoute(builder: (context) => Calendar()));
+          //   },
+          //   leading: Icon(
+          //     Icons.date_range,
+          //     color: Colors.blue,
+          //   ),
+          //   title: Text("Calendar"),
+          // ),
+          // Divider(
+          //   thickness: 1,
+          // ),
           ListTile(
             onTap: () {
               return Navigator.push(

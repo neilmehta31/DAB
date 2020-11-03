@@ -118,13 +118,6 @@ class ContactUsUI extends StatelessWidget {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.only(bottom: 8.0),
-            //   child: Image.asset(
-            //     'images/baby.png',
-            //     height: 100,
-            //   ),
-            // ),
           ],
         ),
       ),
